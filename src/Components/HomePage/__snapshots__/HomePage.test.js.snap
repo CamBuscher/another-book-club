@@ -1,0 +1,385 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage should match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <HomePage />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3>
+          Browse for some free e-books, or search for something more specific
+</h3>,
+        <button
+          name="mystery"
+          onClick={[Function]}
+>
+          Mystery
+</button>,
+        <button
+          name="Science Fiction"
+          onClick={[Function]}
+>
+          Science Fiction
+</button>,
+        <button
+          name="Romance"
+          onClick={[Function]}
+>
+          Romance
+</button>,
+        <button
+          name="Biography"
+          onClick={[Function]}
+>
+          Biography
+</button>,
+        <form
+          onSubmit={[Function]}
+>
+          <input
+                    onChange={[Function]}
+                    placeholder="Search for some books"
+                    value=""
+          />
+          <button
+                    type="submit"
+          >
+                    Search
+          </button>
+</form>,
+        <Unknown
+          books={Array []}
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Browse for some free e-books, or search for something more specific",
+        },
+        "ref": null,
+        "rendered": "Browse for some free e-books, or search for something more specific",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Mystery",
+          "name": "mystery",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Mystery",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Science Fiction",
+          "name": "Science Fiction",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Science Fiction",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Romance",
+          "name": "Romance",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Romance",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Biography",
+          "name": "Biography",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Biography",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              onChange={[Function]}
+              placeholder="Search for some books"
+              value=""
+/>,
+            <button
+              type="submit"
+>
+              Search
+</button>,
+          ],
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "onChange": [Function],
+              "placeholder": "Search for some books",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Search",
+              "type": "submit",
+            },
+            "ref": null,
+            "rendered": "Search",
+            "type": "button",
+          },
+        ],
+        "type": "form",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "books": Array [],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3>
+            Browse for some free e-books, or search for something more specific
+</h3>,
+          <button
+            name="mystery"
+            onClick={[Function]}
+>
+            Mystery
+</button>,
+          <button
+            name="Science Fiction"
+            onClick={[Function]}
+>
+            Science Fiction
+</button>,
+          <button
+            name="Romance"
+            onClick={[Function]}
+>
+            Romance
+</button>,
+          <button
+            name="Biography"
+            onClick={[Function]}
+>
+            Biography
+</button>,
+          <form
+            onSubmit={[Function]}
+>
+            <input
+                        onChange={[Function]}
+                        placeholder="Search for some books"
+                        value=""
+            />
+            <button
+                        type="submit"
+            >
+                        Search
+            </button>
+</form>,
+          <Unknown
+            books={Array []}
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Browse for some free e-books, or search for something more specific",
+          },
+          "ref": null,
+          "rendered": "Browse for some free e-books, or search for something more specific",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Mystery",
+            "name": "mystery",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Mystery",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Science Fiction",
+            "name": "Science Fiction",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Science Fiction",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Romance",
+            "name": "Romance",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Romance",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Biography",
+            "name": "Biography",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Biography",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                onChange={[Function]}
+                placeholder="Search for some books"
+                value=""
+/>,
+              <button
+                type="submit"
+>
+                Search
+</button>,
+            ],
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "onChange": [Function],
+                "placeholder": "Search for some books",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Search",
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": "Search",
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "books": Array [],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
