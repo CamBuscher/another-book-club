@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as APIcalls from '../../Helpers/APIcalls';
+import { BooksDisplay } from '../BooksDisplay/BooksDisplay';
 
 class HomePage extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class HomePage extends Component {
 
     this.state = {
       searchValue : '',
-      searchResults : {}
+      searchResults : []
     };
   }
 
@@ -39,6 +40,7 @@ class HomePage extends Component {
           />
           <button type='submit'>Search</button>
         </form>
+        <BooksDisplay books={this.state.searchResults} />
       </div>
     );
   }
