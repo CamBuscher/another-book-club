@@ -18,8 +18,13 @@ describe('HomePage', () => {
 
   it('should update state when a user types in input field', () => {
     const input = wrapper.find('input');
-    console.log(input)
-  })
+    
+    input.simulate('change', { target: {
+      value: 'hello'
+    }});
+
+    expect(wrapper.state().searchValue).toEqual('hello')
+  });
 
   describe('handleGenreSearch', () => {
     it('should call the searchByGenre API call', () => {
@@ -48,6 +53,36 @@ describe('HomePage', () => {
   });
 
   describe('handleInputSearch', () => {
+    it('should call the search via Author/title API call', async () => {
+      const form = wrapper.find('form');
+      const input = wrapper.find('input');
 
+      input.simulate('change', {
+        target: {
+          value: 'hello'
+        }
+      });
+
+      await form.simulate('submit', {preventDefault: jest.fn()});
+
+      expect(APIcalls.searchViaAuthorTitleISBN).toHaveBeenCalledWith('hello')
+    });
+
+    it('should set the state with search results', async () => {
+      const expected = ['dog']
+      APIcalls.searchViaAuthorTitleISBN = jest.fn().mockImplementation(() => ['dog']);
+      const form = wrapper.find('form');
+      const input = wrapper.find('input');
+
+      input.simulate('change', {
+        target: {
+          value: 'hello'
+        }
+      });
+
+      await form.simulate('submit', { preventDefault: jest.fn() });
+
+      expect(wrapper.state().searchResults).toEqual(expected);
+    });
   });
 });
