@@ -1,4 +1,5 @@
 import React from 'react';
+import './BooksDisplay.css';
 
 export const BooksDisplay = ({books}) => {
   const bookPreviews = books.map(book => {
@@ -6,7 +7,7 @@ export const BooksDisplay = ({books}) => {
 
     !book.imageLinks ? 
       previewImage = 'https://www.freeiconspng.com/uploads/no-image-icon-23.jpg' :
-      previewImage = book.imageLinks.smallThumbnail;
+      previewImage = book.imageLinks.thumbnail;
 
     let author ;
     
@@ -15,16 +16,16 @@ export const BooksDisplay = ({books}) => {
       author = book.authors[0];
 
     return (
-      <div key={book.publishedDate}>
+      <div key={book.publishedDate} className='bookPreview'>
         <h4>{book.title}</h4>
         <h5>Author: {author}</h5>
         <img className='bookPreviewImg' src={previewImage} />
       </div>
-    )
+    );
   });
 
   return (
-    <div>
+    <div className='bookshelf'>
       {bookPreviews}
     </div>
   );
