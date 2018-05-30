@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import HomePage from '../HomePage/HomePage'
 import './App.css';
-import searchViaAuthorTitleISBN from '../../Helpers/APIcalls'
 
 class App extends Component {
   render() {

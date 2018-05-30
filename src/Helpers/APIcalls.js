@@ -1,8 +1,14 @@
 import googleKey from './APIkey';
 
-const searchViaAuthorTitleISBN = async (query) => {
+export const searchViaAuthorTitleISBN = async (query) => {
   const response = await fetch(`https://www.googleapis.com/books/v1/volumes?key=${googleKey}&q=${query}`);
-  console.log(response.json())
+  console.log(response.json());
 };
 
-export default searchViaAuthorTitleISBN
+export const searchFreeEbooksByGenre = async (genre) => {
+  const response = await fetch(`https://www.googleapis.com/books/v1/volumes?key=AIzaSyDwf3i034XmIqxzvCyEhafOTlMlTscHNNE&filter=free-ebooks&q=${genre}`);
+  const results = await response.json();
+  const booksInfo = results.items.map(item => item.volumeInfo);
+  return booksInfo;
+};
+
