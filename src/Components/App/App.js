@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import HomePage from '../HomePage/HomePage'
 import './App.css';
 
+import { connect } from 'react-redux';
+import { setUser } from '../../redux/actions/actions';
+
 import {
   BrowserRouter as Router,
   Route
@@ -30,8 +33,9 @@ class App extends Component {
         : this.setState(() => ({ authUser: null }));
     });
 
-    const users = await db.onceGetUsers()
-    await console.log(users.val())
+    const users = await db.onceGetUsers();
+    const currentUser = await users.val()[this.state.authUser.uid];
+    await this.props.setUser(currentUser);   
   }
 
   render() {
@@ -63,4 +67,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapDispatchToProps = dispatch => ({ 
+  setUser: (user) => dispatch(setUser(user))
+});
+
+export default connect(null, mapDispatchToProps)(App);
