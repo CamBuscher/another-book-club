@@ -7,29 +7,31 @@ import {
   Route
 } from 'react-router-dom'
 
-import Navigation from '../Navigation/Navigation'
-import SignUpPage from '../Authentication/SignUp'
-import SignInPage from '../Authentication/SignIn'
-import './App.css';
+import Navigation from '../Navigation/Navigation';
+import SignUpPage from '../Authentication/SignUp';
+import SignInPage from '../Authentication/SignIn';
 
-import * as routes from '../../constants/routes'
-import { firebase } from '../../firebase'
+import * as routes from '../../constants/routes';
+import { firebase, db } from '../../firebase';
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       authUser: null
-    }
+    };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     firebase.auth.onAuthStateChanged(authUser => {
       authUser
         ? this.setState(() => ({ authUser }))
         : this.setState(() => ({ authUser: null }));
     });
+
+    const users = await db.onceGetUsers()
+    await console.log(users.val())
   }
 
   render() {
