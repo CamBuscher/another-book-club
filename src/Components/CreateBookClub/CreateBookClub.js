@@ -17,7 +17,12 @@ class CreateBookClub extends Component {
     const id = uniqid();
     const { clubName } = this.state;
     const { user } = this.props;
+    const newClub = {
+      id, 
+      clubName 
+    };
     db.doCreateBookClub(id, clubName, [{...user}]);
+    db.updateUserBookClubs(user, newClub);
   }
 
   byPropKey = (propertyName, value) => () => ({
