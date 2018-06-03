@@ -33,12 +33,12 @@ class SignUpForm extends Component {
     const {
       username,
       email,
-      passwordOne,
+      passwordOne
     } = this.state;
 
     const { 
-      history,
-     } = this.props;
+      history
+    } = this.props;
     
     auth.doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {

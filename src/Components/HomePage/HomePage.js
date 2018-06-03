@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as APIcalls from '../../Helpers/APIcalls';
 import { BooksDisplay } from '../BooksDisplay/BooksDisplay';
+import CreateBookClub from '../CreateBookClub/CreateBookClub'
 
 class HomePage extends Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class HomePage extends Component {
   render() {
     return (
       <div>
+        <CreateBookClub />
         <h3>Browse for some free e-books, or search for something more specific</h3>
         <button onClick={this.handleGenreSearch} name='mystery'>Mystery</button>
         <button onClick={this.handleGenreSearch} name='Science Fiction'>Science Fiction</button>
