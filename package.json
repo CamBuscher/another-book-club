@@ -15,7 +15,8 @@
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.2",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "uniqid": "^4.1.1"
   },
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js ./src/",
