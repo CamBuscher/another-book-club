@@ -11,3 +11,26 @@
   color: whitesmoke;
   text-shadow: 3px 3px 4px black;
 }
+
+.button {
+  border-radius: 0px;
+  margin: 20px;
+}
+
+.nav-bar {
+  margin-top: 0px;
+  list-style: none;
+}
+
+.nav-bar li {
+  display: inline-block;
+  margin: 20px;
+}
+
+.nav-bar a {
+  color: whitesmoke
+}
+
+.nav-bar a:hover {
+  text-shadow: 2px 0px 4px black;
+}
