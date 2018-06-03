@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import uniqid from 'uniqid';
 import { db } from '../../firebase';
 import { connect } from 'react-redux';
+import './CreateBookClub.css'
 
 class CreateBookClub extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class CreateBookClub extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}> 
+        <h3>Make a new book club</h3>
         <input 
           value={clubName}
           onChange={event => this.setState(this.byPropKey('clubName', event.target.value))}
@@ -41,6 +43,7 @@ class CreateBookClub extends Component {
           placeholder="What would you like to name your book club?"
         />
         <button type='submit'>Create </ button>
+        <hr />
       </form>
     )
   }
