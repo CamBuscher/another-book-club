@@ -34,7 +34,7 @@ class CreateBookClub extends Component {
     const { clubName } = this.state
 
     return (
-      <form onSubmit={this.handleSubmit}> 
+      <form onSubmit={this.handleSubmit} className='createClubForm'> 
         <h3>Make a new book club</h3>
         <input 
           value={clubName}
