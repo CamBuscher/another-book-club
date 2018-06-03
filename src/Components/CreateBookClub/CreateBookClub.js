@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import uniqid from 'uniqid';
 import { db } from '../../firebase';
+import { connect } from 'react-redux';
 
-export class CreateBookClub extends Component {
+class CreateBookClub extends Component {
   constructor(props) {
     super(props);
 
@@ -14,8 +15,9 @@ export class CreateBookClub extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const id = uniqid();
-    const { clubName } = this.state; 
-    db.doCreateBookClub(id, clubName, ['xxxx']);
+    const { clubName } = this.state;
+    const { user } = this.props;
+    db.doCreateBookClub(id, clubName, [{...user}]);
   }
 
   byPropKey = (propertyName, value) => () => ({
@@ -38,3 +40,7 @@ export class CreateBookClub extends Component {
     )
   }
 }
+
+export const mapStateToProps = ({user}) => ({ user });
+
+export default connect(mapStateToProps)(CreateBookClub);

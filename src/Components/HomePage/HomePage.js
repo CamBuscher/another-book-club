@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as APIcalls from '../../Helpers/APIcalls';
 import { BooksDisplay } from '../BooksDisplay/BooksDisplay';
-import { CreateBookClub } from '../CreateBookClub/CreateBookClub'
+import CreateBookClub from '../CreateBookClub/CreateBookClub'
 
 class HomePage extends Component {
   constructor(props) {
