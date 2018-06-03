@@ -15,7 +15,7 @@ const Navigation = ({ authUser }) =>
 const NavigationAuth = () =>
   <ul className='nav-bar'>
     <li><Link to={routes.HOME}>Home</Link></li>
-    <li><Link to={routes.ACCOUNT}>Account</Link></li>
+    <li><Link to={routes.ACCOUNT}>Your book clubs</Link></li>
     <li><SignOutButton /></li>
   </ul>
 
