@@ -13,6 +13,7 @@ import {
 import Navigation from '../Navigation/Navigation';
 import SignUpPage from '../Authentication/SignUp';
 import SignInPage from '../Authentication/SignIn';
+import { BookClubPage } from '../BookClubPage/BookClubPage';
 
 import * as routes from '../../constants/routes';
 import { firebase, db } from '../../firebase';
@@ -66,6 +67,11 @@ class App extends Component {
           <Route
             exact path={routes.SIGN_IN}
             component={() => <SignInPage />}
+          />
+
+          <Route
+            exact path={routes.ACCOUNT}
+            component={() => <BookClubPage />}
           />
         </div>
       </Router>
