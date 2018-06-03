@@ -26,16 +26,22 @@ class App extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     firebase.auth.onAuthStateChanged(authUser => {
       authUser
         ? this.setState(() => ({ authUser }))
         : this.setState(() => ({ authUser: null }));
     });
+  }
 
-    const users = await db.onceGetUsers();
-    const currentUser = await users.val()[this.state.authUser.uid];
-    await this.props.setUser(currentUser);   
+  async componentDidUpdate(prevProps, prevState) {
+    if (this.state.authUser !== null) {
+      const users = await db.onceGetUsers();
+      const currentUser = await users.val()[this.state.authUser.uid];
+      await this.props.setUser(currentUser);
+    } else {
+      this.props.setUser({});
+    }
   }
 
   render() {
