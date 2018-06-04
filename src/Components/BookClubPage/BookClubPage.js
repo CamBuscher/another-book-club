@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CreateBookClub from '../CreateBookClub/CreateBookClub';
+import { removeBookClub } from '../../redux/actions/actions';
 import { db } from '../../firebase';
 import './BookClubPage.css';
 
@@ -11,6 +12,12 @@ class BookClubPage extends Component {
     this.state = {
       filteredClubs: []
     };
+  }
+
+  removeClub = (clubName) => {
+    const filteredClubs = this.state.filteredClubs.filter(club => club.clubName !== clubName);
+    this.props.removeBookClub(clubName);
+    this.setState({filteredClubs});
   }
 
   filterClubs = (userClubs) => {
@@ -42,7 +49,10 @@ class BookClubPage extends Component {
   renderClubs = () => {
     return this.state.filteredClubs.map(club => {
       return (
-        <h3 key={club.id}>{club.clubName}</h3>
+        <div key={club.id}>
+          <h3 >{club.clubName}</h3>
+          <button onClick={() => this.removeClub(club.clubName)}>Delete club </button>
+        </div>
       );
     });
   }
@@ -60,8 +70,8 @@ class BookClubPage extends Component {
 
 export const mapStateToProps = (state) => ({ userClubs: state.user.bookClubs });
 
-// export const mapDispatchToProps = dispatch => ({
-//   setUser: (user) => dispatch(setUser(user))
-// });
+export const mapDispatchToProps = dispatch => ({
+  removeBookClub: (clubName) => dispatch(removeBookClub(clubName))
+});
 
-export default connect(mapStateToProps)(BookClubPage);
+export default connect(mapStateToProps, mapDispatchToProps)(BookClubPage);

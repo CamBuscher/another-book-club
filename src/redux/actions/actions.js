@@ -9,7 +9,7 @@ export const updateBookClubs = (club, clubName) => ({
   clubName
 });
 
-export const removeBookClub = (club) => ({
+export const removeBookClub = (clubName) => ({
   type: 'REMOVE_CLUB',
-  club
+  clubName
 });
