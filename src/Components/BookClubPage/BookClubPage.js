@@ -14,9 +14,15 @@ class BookClubPage extends Component {
     };
   }
 
-  removeClub = (clubName) => {
+  removeClub = async (clubName) => {
     const filteredClubs = this.state.filteredClubs.filter(club => club.clubName !== clubName);
     this.props.removeBookClub(clubName);
+    
+    const response = await db.onceGetUserBookClubs(this.props.userId)
+    const clubs = await response.val();
+    const newClubs = Object.assign({...clubs}, {[clubName]: null});
+    await db.removeUserBookClub(newClubs, this.props.userId);
+
     this.setState({filteredClubs});
   }
 
@@ -68,7 +74,10 @@ class BookClubPage extends Component {
   }
 };
 
-export const mapStateToProps = (state) => ({ userClubs: state.user.bookClubs });
+export const mapStateToProps = (state) => ({ 
+  userClubs: state.user.bookClubs,
+  userId: state.user.id
+});
 
 export const mapDispatchToProps = dispatch => ({
   removeBookClub: (clubName) => dispatch(removeBookClub(clubName))
