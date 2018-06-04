@@ -8,11 +8,13 @@ import { setUser } from '../../redux/actions/actions';
 import {
   BrowserRouter as Router,
   Route
-} from 'react-router-dom'
+} from 'react-router-dom';
 
 import Navigation from '../Navigation/Navigation';
 import SignUpPage from '../Authentication/SignUp';
 import SignInPage from '../Authentication/SignIn';
+import BookClubPage from '../BookClubPage/BookClubPage';
+import CurrentClub from '../CurrentClub/CurrentClub';
 
 import * as routes from '../../constants/routes';
 import { firebase, db } from '../../firebase';
@@ -67,11 +69,24 @@ class App extends Component {
             exact path={routes.SIGN_IN}
             component={() => <SignInPage />}
           />
+
+          <Route
+            exact path={routes.ACCOUNT}
+            component={() => <BookClubPage />}
+          />
+
+          <Route 
+            exact path={routes.CURRENT_CLUB} 
+            component={() => <CurrentClub />} 
+          />
+          
         </div>
       </Router>
     );
   }
 }
+
+export const mapStateToProps =({ CurrentClub }) => ({ CurrentClub });
 
 export const mapDispatchToProps = dispatch => ({ 
   setUser: (user) => dispatch(setUser(user))

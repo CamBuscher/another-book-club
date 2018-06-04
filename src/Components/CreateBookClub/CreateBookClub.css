@@ -1,0 +1,14 @@
+.createClubForm input {
+  width: 350px;
+  margin-right: 20px;
+}
+
+.createClubForm hr {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.createClubForm h2 {
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px black;
+}

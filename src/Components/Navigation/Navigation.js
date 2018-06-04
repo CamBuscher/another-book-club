@@ -1,22 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import SignOutButton from '../Authentication/SignOut';
 
 import * as routes from '../../constants/routes';
 
-const Navigation = ({ authUser }) => 
+const Navigation = ({ authUser, history }) => 
   <div>
     {authUser
-      ? <NavigationAuth />
+      ? <NavigationAuth history={history}/>
       : <NavigationNonAuth />
     }
   </div>
 
-const NavigationAuth = () =>
+const NavigationAuth = ({ history }) =>
   <ul className='nav-bar'>
     <li><Link to={routes.HOME}>Home</Link></li>
-    <li><Link to={routes.ACCOUNT}>Account</Link></li>
-    <li><SignOutButton /></li>
+    <li><Link to={routes.ACCOUNT}>Your book clubs</Link></li>
+    <li><SignOutButton history={history}/></li>
   </ul>
 
 const NavigationNonAuth = () =>
