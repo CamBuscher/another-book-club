@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
+import * as Routes from '../../constants/routes'
 import CreateBookClub from '../CreateBookClub/CreateBookClub';
 import { removeBookClub, setCurrentClub } from '../../redux/actions/actions';
+
 import { db } from '../../firebase';
 import './BookClubPage.css';
 
@@ -16,6 +19,7 @@ class BookClubPage extends Component {
 
   enterClub = club => {
     this.props.setCurrentClub(club);
+    this.props.history.push(Routes.CURRENT_CLUB)
   }
 
   removeClub = async (clubName) => {
@@ -89,4 +93,4 @@ export const mapDispatchToProps = dispatch => ({
   setCurrentClub: (club) => dispatch(setCurrentClub(club))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookClubPage);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BookClubPage));
