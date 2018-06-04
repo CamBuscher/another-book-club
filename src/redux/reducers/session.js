@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  authUser: null,
+  authUser: null
 };
 
 const applySetAuthUser = (state, action) => ({

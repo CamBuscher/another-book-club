@@ -13,3 +13,8 @@ export const removeBookClub = (clubName) => ({
   type: 'REMOVE_CLUB',
   clubName
 });
+
+export const setCurrentClub = club => ({
+  type: 'SET_CURRENT_CLUB',
+  club
+});

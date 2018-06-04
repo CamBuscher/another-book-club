@@ -73,6 +73,8 @@ class App extends Component {
             exact path={routes.ACCOUNT}
             component={() => <BookClubPage />}
           />
+
+          
         </div>
       </Router>
     );
