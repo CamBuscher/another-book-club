@@ -14,6 +14,7 @@ import Navigation from '../Navigation/Navigation';
 import SignUpPage from '../Authentication/SignUp';
 import SignInPage from '../Authentication/SignIn';
 import BookClubPage from '../BookClubPage/BookClubPage';
+import CurrentClub from '../CurrentClub/CurrentClub';
 
 import * as routes from '../../constants/routes';
 import { firebase, db } from '../../firebase';
@@ -74,12 +75,18 @@ class App extends Component {
             component={() => <BookClubPage />}
           />
 
+          <Route 
+            exact path={routes.CURRENT_CLUB} 
+            component={() => <CurrentClub />} 
+          />
           
         </div>
       </Router>
     );
   }
 }
+
+export const mapStateToProps =({ CurrentClub }) => ({ CurrentClub });
 
 export const mapDispatchToProps = dispatch => ({ 
   setUser: (user) => dispatch(setUser(user))
