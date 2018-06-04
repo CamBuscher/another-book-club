@@ -2,7 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CreateBookClub from '../CreateBookClub/CreateBookClub';
 
-export const BookClubPage = (props) => {
+const BookClubPage = (props) => {
+  
+
   return (
     <div>
       <CreateBookClub />
@@ -10,3 +12,10 @@ export const BookClubPage = (props) => {
   );
 };
 
+export const mapStateToProps = ({ user }) => ({ user });
+
+// export const mapDispatchToProps = dispatch => ({
+//   setUser: (user) => dispatch(setUser(user))
+// });
+
+export default connect(mapStateToProps)(BookClubPage);

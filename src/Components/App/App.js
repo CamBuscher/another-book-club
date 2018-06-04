@@ -8,12 +8,12 @@ import { setUser } from '../../redux/actions/actions';
 import {
   BrowserRouter as Router,
   Route
-} from 'react-router-dom'
+} from 'react-router-dom';
 
 import Navigation from '../Navigation/Navigation';
 import SignUpPage from '../Authentication/SignUp';
 import SignInPage from '../Authentication/SignIn';
-import { BookClubPage } from '../BookClubPage/BookClubPage';
+import BookClubPage from '../BookClubPage/BookClubPage';
 
 import * as routes from '../../constants/routes';
 import { firebase, db } from '../../firebase';
