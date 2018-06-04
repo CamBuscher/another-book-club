@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CreateBookClub from '../CreateBookClub/CreateBookClub';
-import { removeBookClub } from '../../redux/actions/actions';
+import { removeBookClub, setCurrentClub } from '../../redux/actions/actions';
 import { db } from '../../firebase';
 import './BookClubPage.css';
 
@@ -12,6 +12,10 @@ class BookClubPage extends Component {
     this.state = {
       filteredClubs: []
     };
+  }
+
+  enterClub = club => {
+    this.props.setCurrentClub(club);
   }
 
   removeClub = async (clubName) => {
@@ -57,6 +61,7 @@ class BookClubPage extends Component {
       return (
         <div key={club.id}>
           <h3 >{club.clubName}</h3>
+          <button onClick={() => this.enterClub(club)}>Enter Club</button>
           <button onClick={() => this.removeClub(club.clubName)}>Delete club </button>
         </div>
       );
@@ -80,7 +85,8 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  removeBookClub: (clubName) => dispatch(removeBookClub(clubName))
+  removeBookClub: (clubName) => dispatch(removeBookClub(clubName)),
+  setCurrentClub: (club) => dispatch(setCurrentClub(club))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookClubPage);
