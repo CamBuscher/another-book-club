@@ -37,7 +37,7 @@ class CreateBookClub extends Component {
 
     return (
       <form onSubmit={this.handleSubmit} className='createClubForm'> 
-        <h3>Make a new book club</h3>
+        <h2>Make a new book club</h2>
         <input 
           value={clubName}
           onChange={event => this.setState(this.byPropKey('clubName', event.target.value))}
