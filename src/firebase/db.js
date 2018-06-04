@@ -18,7 +18,7 @@ export const doCreateBookClub = (id, clubName, member) =>
     clubName,
     members: [...member],
     id,
-    admin: member
+    admin: member[0].id
   });
 
 export const onceGetUsers = () => 
