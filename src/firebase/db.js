@@ -27,9 +27,11 @@ export const onceGetUsers = () =>
 export const onceGetUserBookClubs = (id) => 
   db.ref(`users/${id}/bookClubs`).once('value');
 
-export const removeUserBookClub = (clubs, id) => {
+export const removeUserBookClub = (clubs, id) => 
   db.ref(`users/${id}/bookClubs`).set({...clubs});
-}
 
 export const onceGetClubs = () => 
   db.ref('bookClubs').once('value');
+
+export const addBookToClub = (books, clubID) => 
+  db.ref(`bookClubs/${clubID}/books`).set(books)

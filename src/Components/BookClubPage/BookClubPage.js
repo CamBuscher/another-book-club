@@ -40,12 +40,12 @@ class BookClubPage extends Component {
       .then((clubs) => {
         const ids = Object.keys(clubs);
         const filteredIds = ids.filter(id => {
-          return userClubs.includes(id)
+          return userClubs.includes(id);
         });
         return filteredIds.map(id => clubs[id]);
       })
       .then(filteredClubs => this.setState({ filteredClubs }))
-      .catch(err => [])
+      .catch(err => []);
   }
 
   componentDidMount() {
@@ -68,8 +68,8 @@ class BookClubPage extends Component {
         if (club.admin === this.props.userId) {
           display = <button onClick={() => this.removeClub(club.clubName)}>Delete club </button>
         } 
-        return display
-      }
+        return display;
+      };
 
       return (
         <div key={club.id}>

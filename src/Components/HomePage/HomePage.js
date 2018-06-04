@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as APIcalls from '../../Helpers/APIcalls';
 import { BooksDisplay } from '../BooksDisplay/BooksDisplay';
+import { connect } from 'react-redux';
 
 class HomePage extends Component {
   constructor(props) {
@@ -40,7 +41,11 @@ class HomePage extends Component {
           />
           <button type='submit'>Search</button>
         </form>
-        <BooksDisplay books={this.state.searchResults} />
+        <BooksDisplay 
+          books={this.state.searchResults} 
+          currentClub={this.props.currentClub}
+          addBookToClub={this.props.addBookToClub}
+        />
       </div>
     );
   }

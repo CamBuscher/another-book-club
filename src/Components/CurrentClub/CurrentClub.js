@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import HomePage from '../HomePage/HomePage';
 import { connect } from 'react-redux';
+import { db } from '../../firebase';
 
 class CurrentClub extends Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {
-    // console.log(this.props.currentClub)
+  addBookToClub = (books) => {
+    db.addBookToClub(books, this.props.currentClub.id)
   }
 
   render() {
@@ -17,7 +18,10 @@ class CurrentClub extends Component {
         <h2>{this.props.currentClub.clubName}</h2>
         <hr />
         <h3> SEARCH FOR A BOOK TO ADD TO YOUR CLUB</h3>
-        <HomePage />
+        <HomePage 
+          currentClub={this.props.currentClub}
+          addBookToClub={this.addBookToClub}
+        />
       </div>
     );
   }

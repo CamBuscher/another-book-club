@@ -86,8 +86,6 @@ class App extends Component {
   }
 }
 
-export const mapStateToProps =({ CurrentClub }) => ({ CurrentClub });
-
 export const mapDispatchToProps = dispatch => ({ 
   setUser: (user) => dispatch(setUser(user))
 });
