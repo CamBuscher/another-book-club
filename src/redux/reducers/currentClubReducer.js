@@ -3,6 +3,9 @@ export const currentClubReducer = (state = {}, action) => {
     case 'SET_CURRENT_CLUB':
       return action.club;
     case 'ADD_BOOK_TO_CLUB': 
+      if (!state.books) {
+        state.books = [];
+      }
       return {...state, books: [...state.books, action.book]};
     default:
       return state;

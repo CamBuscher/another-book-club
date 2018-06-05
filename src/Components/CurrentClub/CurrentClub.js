@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { db } from '../../firebase';
 import './CurrentClub.css';
 import { addBookToClub } from '../../redux/actions/actions';
+import WYSIWYG from '../WYSIWYG/Wysiwyg';
 
 class CurrentClub extends Component {
   constructor(props) {
@@ -77,6 +78,7 @@ class CurrentClub extends Component {
             {this.showSearch()}
           <hr />
         </div>
+        <WYSIWYG />
       </div>
     );
   }

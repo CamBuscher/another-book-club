@@ -1,0 +1,10 @@
+.wysiwyg {
+  width: 75%;
+  margin: auto;
+  background-color: #ffffff80;
+  padding: 20px;
+}
+
+.wysiwyg button { 
+  margin-top: 10px;
+}
