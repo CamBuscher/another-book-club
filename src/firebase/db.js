@@ -35,4 +35,7 @@ export const onceGetClubs = () =>
   db.ref('bookClubs').once('value');
 
 export const addBookToClub = (books, clubID) => 
-  db.ref(`bookClubs/${clubID}/books`).set(books)
+  db.ref(`bookClubs/${clubID}/books`).set(books);
+
+export const addCommentToClub = (comments, clubID) => 
+  db.ref(`bookClubs/${clubID}/comments`).set(comments);
