@@ -15,8 +15,7 @@ export const BooksDisplay = ({books, currentClub, addBookToClub}) => {
       author = 'Author not available' :
       author = book.authors[0];
 
-    const currentClubBooks = currentClub.books || []
-    console.log(currentClubBooks)
+    const currentClubBooks = currentClub.books || [];
     return (
       <div key={book.publishedDate} className='bookPreview'>
         <h4>{book.title}</h4>
