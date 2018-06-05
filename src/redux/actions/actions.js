@@ -23,3 +23,8 @@ export const addBookToClub = book => ({
   type: 'ADD_BOOK_TO_CLUB',
   book
 });
+
+export const addCommentToClub = comment => ({
+  type: 'ADD_COMMENT_TO_CLUB',
+  comment
+});
