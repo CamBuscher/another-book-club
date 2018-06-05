@@ -17,7 +17,7 @@ class Wysiwyg extends React.Component {
     this.setState({ text: value })
   }
 
-  handleComment = () => {  
+  handleComment = () => { 
     if (!this.props.currentClub.comments) {
       this.props.currentClub.comments = [];
     }
