@@ -13,9 +13,10 @@ export const updateUserBookClubs = (user, newClub) => {
   db.ref(`users/${user.id}/bookClubs/${newClub.clubName}`).set({...newClub});
 };
 
-export const doCreateBookClub = (id, clubName, member) =>
+export const doCreateBookClub = (id, clubName, member, description) =>
   db.ref(`bookClubs/${id}`).set({
     clubName,
+    description,
     members: [...member],
     id,
     admin: member[0].id
