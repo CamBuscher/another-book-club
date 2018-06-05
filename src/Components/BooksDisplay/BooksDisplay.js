@@ -23,7 +23,7 @@ export const BooksDisplay = ({books, currentClub, addBookToClub}) => {
         <img className='bookPreviewImg' src={previewImage} />
         <br />
         <button 
-          onClick={() => addBookToClub([...currentClubBooks, book], currentClub.id)}
+          onClick={() => addBookToClub([...currentClubBooks, book], book)}
         > Add to your club!
         </button>
       </div>

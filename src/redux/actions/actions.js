@@ -19,7 +19,7 @@ export const setCurrentClub = club => ({
   club
 });
 
-export const addBookToClub = club => ({
+export const addBookToClub = book => ({
   type: 'ADD_BOOK_TO_CLUB',
-  club
+  book
 });

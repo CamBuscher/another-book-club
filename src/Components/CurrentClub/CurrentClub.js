@@ -3,6 +3,7 @@ import HomePage from '../HomePage/HomePage';
 import { connect } from 'react-redux';
 import { db } from '../../firebase';
 import './CurrentClub.css';
+import { addBookToClub } from '../../redux/actions/actions';
 
 class CurrentClub extends Component {
   constructor(props) {
@@ -10,11 +11,12 @@ class CurrentClub extends Component {
 
     this.state = {
       showSearch : false
-    }
+    };
   }
 
-  addBookToClub = (books) => {
+  addBookToClub = (books, book) => {
     db.addBookToClub(books, this.props.currentClub.id);
+    this.props.addBookToClub(book);
   }
 
   displayClubBooks = () => {
@@ -32,10 +34,7 @@ class CurrentClub extends Component {
         author = book.authors[0];
 
       return (
-        <div key={book.publishedDate} className='bookPreview'>
-          <h4>{book.title}</h4>
-          <img className='bookPreviewImg' src={previewImage} />
-        </div>
+        <img key={book.publishedDate} className='bookPreviewImg' src={previewImage} />
       );
     });
   } 
@@ -85,4 +84,8 @@ class CurrentClub extends Component {
 
 export const mapStateToProps = ({ currentClub }) => ({ currentClub });
 
-export default connect(mapStateToProps)(CurrentClub);
+export const mapDispatchToProps = dispatch => ({
+  addBookToClub: book => dispatch(addBookToClub(book))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CurrentClub);
