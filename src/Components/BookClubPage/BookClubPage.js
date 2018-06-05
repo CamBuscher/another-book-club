@@ -37,14 +37,15 @@ class BookClubPage extends Component {
   filterClubs = (userClubs) => {
     db.onceGetClubs()
       .then(data => data.val())
-      .then(clubs => {
+      .then((clubs) => {
         const ids = Object.keys(clubs);
         const filteredIds = ids.filter(id => {
-          return userClubs.includes(id)
+          return userClubs.includes(id);
         });
         return filteredIds.map(id => clubs[id]);
       })
-      .then(filteredClubs => this.setState({ filteredClubs }));
+      .then(filteredClubs => this.setState({ filteredClubs }))
+      .catch(err => []);
   }
 
   componentDidMount() {
@@ -53,7 +54,7 @@ class BookClubPage extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const shouldUpdate = Object.keys(this.props.userClubs || {}).length !== Object.keys(nextProps.userClubs).length;
+    const shouldUpdate = Object.keys(this.props.userClubs || {}).length !== Object.keys(nextProps.userClubs || {}).length;
     if (shouldUpdate) {
       const userClubs = Object.keys(nextProps.userClubs || {}).map(key => nextProps.userClubs[key].id);
       this.filterClubs(userClubs);
@@ -62,11 +63,20 @@ class BookClubPage extends Component {
 
   renderClubs = () => {
     return this.state.filteredClubs.map(club => {
+      const deleteAbility = () => {
+        let display = <div></div>
+        if (club.admin === this.props.userId) {
+          display = <button onClick={() => this.removeClub(club.clubName)}>Delete club </button>
+        } 
+        return display;
+      };
+
       return (
         <div key={club.id}>
           <h3 >{club.clubName}</h3>
+          <p>{club.description}</p>
           <button onClick={() => this.enterClub(club)}>Enter Club</button>
-          <button onClick={() => this.removeClub(club.clubName)}>Delete club </button>
+          {deleteAbility()}
         </div>
       );
     });

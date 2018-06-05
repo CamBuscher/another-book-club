@@ -1,0 +1,41 @@
+.clubBooks {
+  overflow: scroll;
+  display: flex;
+  justify-content: center;
+}
+
+.clubBooks .bookPreview {
+  border: 1px solid black;
+  margin: 10px;
+  width: 15%;
+  min-width: 150px;
+  max-width: 400px;
+  box-shadow: 3px 3px 8px black;
+  padding: 5px;
+}
+
+.clubBooks img {
+  width: 100%;
+  max-width: 120px;
+  margin: 0px 10px;
+}
+
+.clubBooks .bookPreview h4, h5 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px black;
+}
+
+.bookPreview h4 {
+  font-size: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
+}

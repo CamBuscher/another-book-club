@@ -10,22 +10,23 @@ class CreateBookClub extends Component {
     super(props);
 
     this.state = {
-      clubName: ''
+      clubName: '',
+      description: ''
     };
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     const id = uniqid();
-    const { clubName } = this.state;
+    const { clubName, description } = this.state;
     const { user } = this.props;
     const newClub = {
       id, 
       clubName 
     };
-    db.doCreateBookClub(id, clubName, [{...user}]);
+    db.doCreateBookClub(id, clubName, [{...user}], description);
     db.updateUserBookClubs(user, newClub);
-    this.props.updateBookClubs({[clubName]: {clubName, id}}, clubName);
+    this.props.updateBookClubs({[clubName]: {clubName, id, description}}, clubName);
   }
 
   byPropKey = (propertyName, value) => () => ({
@@ -33,7 +34,7 @@ class CreateBookClub extends Component {
   });
 
   render() {
-    const { clubName } = this.state
+    const { clubName, description } = this.state
 
     return (
       <form onSubmit={this.handleSubmit} className='createClubForm'> 
@@ -44,6 +45,14 @@ class CreateBookClub extends Component {
           type="text"
           placeholder="What would you like to name your book club?"
         />
+        <br />
+        <input
+          value={description}
+          onChange={event => this.setState(this.byPropKey('description', event.target.value))}
+          type="text"
+          placeholder="Describe your book club?"
+        />
+        <br />
         <button type='submit'>Create </ button>
         <hr />
       </form>
