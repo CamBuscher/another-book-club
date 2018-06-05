@@ -35,11 +35,10 @@ class Wysiwyg extends React.Component {
 
     this.setState({ text: '' });
   }
-  
+
   render() {
     return (
       <div className='wysiwyg'>
-        <h4>Leave a comment!</h4>
         <ReactQuill value={this.state.text}
           onChange={this.handleChange} />
         <button 

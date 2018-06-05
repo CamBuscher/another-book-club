@@ -15,6 +15,7 @@ import SignUpPage from '../Authentication/SignUp';
 import SignInPage from '../Authentication/SignIn';
 import BookClubPage from '../BookClubPage/BookClubPage';
 import CurrentClub from '../CurrentClub/CurrentClub';
+import AllBookClubs from '../AllBookClubs/AllBookClubs';
 
 import * as routes from '../../constants/routes';
 import { firebase, db } from '../../firebase';
@@ -79,7 +80,11 @@ class App extends Component {
             exact path={routes.CURRENT_CLUB} 
             component={() => <CurrentClub />} 
           />
-          
+
+          <Route 
+            exact path={routes.ALL_CLUBS}
+            component={() => <AllBookClubs />}
+          />
         </div>
       </Router>
     );
