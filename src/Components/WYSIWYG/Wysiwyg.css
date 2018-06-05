@@ -1,11 +1,14 @@
 .wysiwyg {
-  width: 75%;
+  width: 80%;
   margin: auto;
-  background-color: #ffffff;
+  background-color: #ddd;
   padding: 20px;
-  box-shadow: 8px 8px 24px black;
 }
 
 .wysiwyg button { 
+  margin-top: 10px;
+}
+
+.wysiwyg h4 {
   margin-top: 10px;
 }

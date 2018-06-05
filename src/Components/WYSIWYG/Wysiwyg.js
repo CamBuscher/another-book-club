@@ -22,9 +22,11 @@ class Wysiwyg extends React.Component {
       this.props.currentClub.comments = [];
     }
 
+    const date = new Date().toLocaleString()
     const comment = {
       user: this.props.user,
-      comment: this.state.text
+      comment: this.state.text,
+      date
     };
 
     db.addCommentToClub([...this.props.currentClub.comments, comment], this.props.currentClub.id);
@@ -33,7 +35,7 @@ class Wysiwyg extends React.Component {
 
     this.setState({ text: '' });
   }
-
+  
   render() {
     return (
       <div className='wysiwyg'>
