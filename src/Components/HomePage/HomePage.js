@@ -22,7 +22,7 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <h3>Browse for some free e-books, or search for something more specific</h3>
+        <h3>Search for a book</h3>
         <form onSubmit={this.handleInputSearch}>
           <input 
             placeholder='Search for some books' 

@@ -74,6 +74,7 @@ class BookClubPage extends Component {
       return (
         <div key={club.id}>
           <h3 >{club.clubName}</h3>
+          <p>{club.description}</p>
           <button onClick={() => this.enterClub(club)}>Enter Club</button>
           {deleteAbility()}
         </div>

@@ -24,7 +24,6 @@ class CreateBookClub extends Component {
       id, 
       clubName 
     };
-    debugger
     db.doCreateBookClub(id, clubName, [{...user}], description);
     db.updateUserBookClubs(user, newClub);
     this.props.updateBookClubs({[clubName]: {clubName, id, description}}, clubName);
