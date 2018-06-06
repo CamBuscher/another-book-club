@@ -96,7 +96,7 @@ describe('Sign Out', () => {
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
-
+e
   it('should call auth.doSignOut', () => {
     wrapper.simulate('click')
 

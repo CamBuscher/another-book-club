@@ -7,10 +7,3 @@ export const searchViaAuthorTitleISBN = async (query) => {
   return booksInfo;
 };
 
-export const searchFreeEbooksByGenre = async (genre) => {
-  const response = await fetch(`https://www.googleapis.com/books/v1/volumes?key=${googleKEY}&filter=free-ebooks&q=${genre}`);
-  const results = await response.json();
-  const booksInfo = results.items.map(item => item.volumeInfo);
-  return booksInfo;
-};
-
