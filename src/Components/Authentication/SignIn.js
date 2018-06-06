@@ -10,13 +10,13 @@ const SignInPage = ({ history }) =>
     <h1>Sign In</h1>
     <SignInForm history={history} />
     <SignUpLink />
-  </div>
+  </div>;
 
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
 });
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   email: '',
   password: '',
   error: null,
@@ -32,11 +32,11 @@ class SignInForm extends Component {
   onSubmit = (event) => {
     const {
       email,
-      password,
+      password
     } = this.state;
 
     const {
-      history,
+      history
     } = this.props;
 
     auth.doSignInWithEmailAndPassword(email, password)
@@ -47,7 +47,6 @@ class SignInForm extends Component {
       .catch(error => {
         this.setState(byPropKey('error', error));
       });
-
     event.preventDefault();
   }
 
@@ -89,5 +88,5 @@ class SignInForm extends Component {
 export default withRouter(SignInPage);
 
 export {
-  SignInForm,
+  SignInForm
 };

@@ -3,11 +3,11 @@ import * as routes from '../../constants/routes';
 import { Link, withRouter } from 'react-router-dom';
 import { auth } from '../../firebase';
 
-const SignOutButton = ({history}) => {
+export const SignOutButton = ({history}) => {
 
   const signOut = () => {
     auth.doSignOut();
-    history.push(routes.HOME)
+    history.push(routes.HOME);
   };
   
   return  (
@@ -19,4 +19,5 @@ const SignOutButton = ({history}) => {
     </button>
   );
 };
-export default withRouter(SignOutButton)
+
+export default withRouter(SignOutButton);
