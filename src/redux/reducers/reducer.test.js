@@ -1,6 +1,8 @@
 import { currentClubReducer } from './currentClubReducer';
 import sessionReducer from './session';
 import {userReducer} from './userReducer';
+import rootReducer from './rootReducer';
+import { combineReducers } from 'redux';
 
 import * as actions from '../actions/actions';
 
