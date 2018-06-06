@@ -9,12 +9,11 @@ import PropTypes from 'prop-types';
 
 export class Wysiwyg extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = { text: '' }
-    this.handleChange = this.handleChange.bind(this)
+    super(props);
+    this.state = { text: '' };
   }
 
-  handleChange(value) {
+  handleChange = (value) => {
     this.setState({ text: value });
   }
 
