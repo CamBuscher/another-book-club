@@ -54,7 +54,6 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <Navigation authUser={this.state.authUser} />
-            <h1 className="App-title">Another book club</h1>
           </header>
 
           {this.state.authUser
