@@ -20,6 +20,8 @@ class HomePage extends Component {
   }
 
   render() {
+    const isInvalid = this.state.searchValue === '';
+
     return (
       <div>
         <h5>Search for a book</h5>
@@ -29,7 +31,7 @@ class HomePage extends Component {
             value={this.state.searchValue} 
             onChange={(e) => { this.setState({searchValue : e.target.value}); }}
           />
-          <button type='submit'>Search</button>
+          <button type='submit' disabled={isInvalid} >Search</button>
         </form>
         <BooksDisplay 
           books={this.state.searchResults} 

@@ -57,3 +57,8 @@ button {
   cursor: pointer;
   margin: 5px;
 }
+
+button:disabled {
+  background-color: lightgray;
+  cursor: auto;
+}
