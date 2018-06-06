@@ -35,10 +35,10 @@
   text-shadow: 2px 0px 4px black;
 }
 
-.signIn input {
+input {
  border: 1px solid gray;
  display: block;
- margin: 0px auto 10px auto;
+ margin: 10px auto 10px auto;
  width: 250px;
  height: 25px;
 }
@@ -52,7 +52,7 @@ button {
   text-align: center;
   font-size: 14px;
   height: 25px;
-  width: 200px;
+  width: fit-content;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
