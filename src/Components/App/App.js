@@ -15,6 +15,7 @@ import SignUpPage from '../Authentication/SignUp';
 import SignInPage from '../Authentication/SignIn';
 import BookClubPage from '../BookClubPage/BookClubPage';
 import CurrentClub from '../CurrentClub/CurrentClub';
+import AllBookClubs from '../AllBookClubs/AllBookClubs';
 
 import * as routes from '../../constants/routes';
 import { firebase, db } from '../../firebase';
@@ -56,10 +57,16 @@ class App extends Component {
             <h1 className="App-title">Another book club</h1>
           </header>
 
-          <Route
-            exact path={routes.HOME}
-            component={() => <HomePage />}
-          />
+          {this.state.authUser
+            ? <Route
+              exact path={routes.HOME}
+              component={() => <BookClubPage />}
+            />
+            : <Route
+              exact path={routes.HOME}
+              component={() => <SignInPage />}
+            />
+          }
 
           <Route
             exact path={routes.SIGN_UP}
@@ -79,7 +86,11 @@ class App extends Component {
             exact path={routes.CURRENT_CLUB} 
             component={() => <CurrentClub />} 
           />
-          
+
+          <Route 
+            exact path={routes.ALL_CLUBS}
+            component={() => <AllBookClubs />}
+          />
         </div>
       </Router>
     );

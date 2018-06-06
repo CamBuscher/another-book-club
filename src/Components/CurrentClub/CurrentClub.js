@@ -70,14 +70,13 @@ class CurrentClub extends Component {
 
   showComments = () => {
     const comments = this.props.currentClub.comments || [];
-
     
     return comments.map(comment => {
-
       return (
-        <div className='comment' key={Date.now()}>
+        <div className='comment' key={comment.date}>
           <p className='user'>{comment.user.username}</p>
-          <div dangerouslySetInnerHTML={{__html: comment.comment}}></div>
+          <p className='date'>{comment.date}</p>
+          <div className='commentBody' dangerouslySetInnerHTML={{__html: comment.comment}}></div>
         </div>
       );
     });
@@ -93,8 +92,10 @@ class CurrentClub extends Component {
           {this.showSearch()}
           <hr />
         </div>
-        {this.showComments()}
-        <WYSIWYG />
+        <div className='comment-area'>
+          {this.showComments()}
+          <WYSIWYG />
+        </div>
       </div>
     );
   }

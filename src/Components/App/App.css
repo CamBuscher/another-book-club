@@ -2,6 +2,7 @@
   text-align: center;
   background: radial-gradient(circle, rgba(231,193,193,1) 0%, rgba(228,151,45,1) 96%);
   min-height: 100vh;
+  padding: 20px;
 }
 
 .App-title {
