@@ -2,7 +2,7 @@ const INITIAL_STATE = {
   authUser: null
 };
 
-const applySetAuthUser = (state, action) => ({
+export const applySetAuthUser = (state, action) => ({
   ...state,
   authUser: action.authUser
 });

@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`wysiwyg should match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Wysiwyg
+    addComment={[Function]}
+    currentClub={
+        Object {
+            "comments": Array [],
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Quill
+          modules={Object {}}
+          onChange={[Function]}
+          theme="snow"
+          value=""
+/>,
+        <button
+          onClick={[Function]}
+>
+           Add Comment 
+</button>,
+      ],
+      "className": "wysiwyg",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "modules": Object {},
+          "onChange": [Function],
+          "theme": "snow",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": " Add Comment ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": " Add Comment ",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Quill
+            modules={Object {}}
+            onChange={[Function]}
+            theme="snow"
+            value=""
+/>,
+          <button
+            onClick={[Function]}
+>
+             Add Comment 
+</button>,
+        ],
+        "className": "wysiwyg",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "modules": Object {},
+            "onChange": [Function],
+            "theme": "snow",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": " Add Comment ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": " Add Comment ",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

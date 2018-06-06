@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 import { SignUpLink } from './SignUp';
 import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
@@ -10,16 +10,16 @@ const SignInPage = ({ history }) =>
     <h1>Sign In</h1>
     <SignInForm history={history} />
     <SignUpLink />
-  </div>
+  </div>;
 
 const byPropKey = (propertyName, value) => () => ({
-  [propertyName]: value,
+  [propertyName]: value
 });
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   email: '',
   password: '',
-  error: null,
+  error: null
 };
 
 class SignInForm extends Component {
@@ -32,11 +32,11 @@ class SignInForm extends Component {
   onSubmit = (event) => {
     const {
       email,
-      password,
+      password
     } = this.state;
 
     const {
-      history,
+      history
     } = this.props;
 
     auth.doSignInWithEmailAndPassword(email, password)
@@ -47,7 +47,6 @@ class SignInForm extends Component {
       .catch(error => {
         this.setState(byPropKey('error', error));
       });
-
     event.preventDefault();
   }
 
@@ -55,7 +54,7 @@ class SignInForm extends Component {
     const {
       email,
       password,
-      error,
+      error
     } = this.state;
 
     const isInvalid =
@@ -86,8 +85,16 @@ class SignInForm extends Component {
   }
 }
 
+SignInPage.propTypes = {
+  history: PropTypes.object
+};
+
+SignInForm.propTypes = {
+  history: PropTypes.object
+};
+
 export default withRouter(SignInPage);
 
 export {
-  SignInForm,
+  SignInForm
 };

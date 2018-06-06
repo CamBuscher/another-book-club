@@ -1,10 +1,10 @@
 import React from 'react';
 import { BooksDisplay } from './BooksDisplay';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('BooksDisplay', () => {
-  let wrapper
-  let mockprops
+  let wrapper;
+  let mockprops;
 
   it('should match snapshot when given books', () => {
     mockprops = {
@@ -14,7 +14,11 @@ describe('BooksDisplay', () => {
         imageLinks: {
           thumbnail: 'book.jpg'
         }
-      }]
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
     };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
@@ -23,7 +27,10 @@ describe('BooksDisplay', () => {
 
   it('should match snapshot when given no books', () => {
     mockprops = {
-      books: []
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
     };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
@@ -36,17 +43,23 @@ describe('BooksDisplay', () => {
 
     const bookPreviews = wrapper.find('.bookPreview');
 
-    expect(bookPreviews).toHaveLength(0)
+    expect(bookPreviews).toHaveLength(0);
   });
 
   it('should have a bookPreview div if books received', () => {
-    mockprops = { books: [{
-      title: 'Annihilation',
-      authors: ['Jeff'],
-      imageLinks: {
-        thumbnail: 'book.jpg'
-      }
-    }] };
+    mockprops = {
+      books: [{
+        title: 'Annihilation',
+        authors: ['Jeff'],
+        imageLinks: {
+          thumbnail: 'book.jpg'
+        }
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
+    };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
     const bookPreviews = wrapper.find('.bookPreview');
@@ -59,7 +72,11 @@ describe('BooksDisplay', () => {
       books: [{
         title: 'Annihilation',
         authors: ['Jeff']
-      }]
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
     };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
@@ -76,7 +93,11 @@ describe('BooksDisplay', () => {
         imageLinks: {
           thumbnail: 'book.jpg'
         }
-      }]
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
     };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
@@ -92,7 +113,11 @@ describe('BooksDisplay', () => {
         imageLinks: {
           thumbnail: 'book.jpg'
         }
-      }]
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
     };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
@@ -109,12 +134,38 @@ describe('BooksDisplay', () => {
         imageLinks: {
           thumbnail: 'book.jpg'
         }
-      }]
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
     };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
     const author = wrapper.find('.bookPreview').find('h5');
 
     expect(author.text()).toEqual('Author: jeff');
+  });
+
+  it('should call addBookToClub on button click', () => {
+    mockprops = {
+      books: [{
+        title: 'Annihilation',
+        authors: ['jeff'],
+        imageLinks: {
+          thumbnail: 'book.jpg'
+        }
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
+    };
+    wrapper = shallow(<BooksDisplay {...mockprops} />);
+
+    const button = wrapper.find('button');
+    button.simulate('click');
+
+    expect(mockprops.addBookToClub).toHaveBeenCalled();
   });
 });

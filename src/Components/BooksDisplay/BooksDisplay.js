@@ -1,7 +1,8 @@
 import React from 'react';
 import './BooksDisplay.css';
+import PropTypes from 'prop-types';
 
-export const BooksDisplay = ({books, currentClub, addBookToClub}) => {
+export const BooksDisplay = ({books = [], currentClub, addBookToClub}) => {
   const bookPreviews = books.map(book => {
     let previewImage;
 
@@ -35,4 +36,10 @@ export const BooksDisplay = ({books, currentClub, addBookToClub}) => {
       {bookPreviews}
     </div>
   );
+};
+
+BooksDisplay.propTypes = {
+  books: PropTypes.array,
+  currentClub: PropTypes.object,
+  addBookToClub: PropTypes.func
 };

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { db } from '../../firebase/';
 import { connect } from 'react-redux';
 import { updateBookClubs } from '../../redux/actions/actions';
+import PropTypes from 'prop-types';
 
-class AllBookClubs extends Component {
+export class AllBookClubs extends Component {
   constructor(props) {
     super(props);
 
@@ -30,12 +31,12 @@ class AllBookClubs extends Component {
 
   renderClubs = () => {
     const clubs = this.state.clubs.map(club => {
-      const userClubs = Object.keys(this.props.user.bookClubs || {})
+      const userClubs = Object.keys(this.props.user.bookClubs || {});
       const enterCheck = () => {
         if (userClubs.includes(club.clubName)) {
           return <p>You're already in this club!</p>;
         } else {
-          return <button onClick={() => this.addClub(club)}>Enter Club</button>;
+          return <button onClick={() => this.addClub(club)}>Join Club</button>;
         }
       };
       return (
@@ -57,6 +58,11 @@ class AllBookClubs extends Component {
     );
   }
 }
+
+AllBookClubs.propTypes = {
+  updateBookClubs: PropTypes.func,
+  user: PropTypes.obj
+};
 
 export const mapStateToProps = (state) => ({
   user: state.user

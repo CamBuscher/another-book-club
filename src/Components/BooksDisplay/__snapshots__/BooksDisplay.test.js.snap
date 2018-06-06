@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
+    addBookToClub={[Function]}
     books={
         Array [
             Object {
@@ -17,6 +18,11 @@ ShallowWrapper {
               "title": "Annihilation",
             },
           ]
+    }
+    currentClub={
+        Object {
+            "books": Array [],
+          }
     }
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -46,6 +52,12 @@ ShallowWrapper {
                     className="bookPreviewImg"
                     src="book.jpg"
           />
+          <br />
+          <button
+                    onClick={[Function]}
+          >
+                     Add to your club!
+          </button>
 </div>,
       ],
       "className": "bookshelf",
@@ -69,6 +81,12 @@ ShallowWrapper {
               className="bookPreviewImg"
               src="book.jpg"
 />,
+            <br />,
+            <button
+              onClick={[Function]}
+>
+               Add to your club!
+</button>,
           ],
           "className": "bookPreview",
         },
@@ -114,6 +132,27 @@ ShallowWrapper {
             "rendered": null,
             "type": "img",
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": " Add to your club!",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": " Add to your club!",
+            "type": "button",
+          },
         ],
         "type": "div",
       },
@@ -141,6 +180,12 @@ ShallowWrapper {
                         className="bookPreviewImg"
                         src="book.jpg"
             />
+            <br />
+            <button
+                        onClick={[Function]}
+            >
+                         Add to your club!
+            </button>
 </div>,
         ],
         "className": "bookshelf",
@@ -164,6 +209,12 @@ ShallowWrapper {
                 className="bookPreviewImg"
                 src="book.jpg"
 />,
+              <br />,
+              <button
+                onClick={[Function]}
+>
+                 Add to your club!
+</button>,
             ],
             "className": "bookPreview",
           },
@@ -209,6 +260,27 @@ ShallowWrapper {
               "rendered": null,
               "type": "img",
             },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": " Add to your club!",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": " Add to your club!",
+              "type": "button",
+            },
           ],
           "type": "div",
         },
@@ -231,7 +303,12 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
-    books={Array []}
+    addBookToClub={[Function]}
+    currentClub={
+        Object {
+            "books": Array [],
+          }
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

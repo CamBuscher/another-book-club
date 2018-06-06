@@ -5,6 +5,7 @@ import { db } from '../../firebase';
 import './CurrentClub.css';
 import { addBookToClub } from '../../redux/actions/actions';
 import WYSIWYG from '../WYSIWYG/Wysiwyg';
+import PropTypes from 'prop-types';
 
 class CurrentClub extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ class CurrentClub extends Component {
             {this.displayClubBooks()}
           </div>
         </div>
-      )
+      );
     } else {
       return <div></div>;
     }
@@ -64,7 +65,7 @@ class CurrentClub extends Component {
         />
       );
     } else {
-      return <button onClick={() => this.setState({ showSearch: true })}> Add a book </button>
+      return <button onClick={() => this.setState({ showSearch: true })}> Add a book </button>;
     }
   }
 
@@ -101,10 +102,15 @@ class CurrentClub extends Component {
   }
 }
 
+CurrentClub.propTypes = {
+  currentClub: PropTypes.object,
+  addBookToClub: PropTypes.func
+};
+
 export const mapStateToProps = ({ currentClub }) => ({ currentClub });
 
 export const mapDispatchToProps = dispatch => ({
   addBookToClub: book => dispatch(addBookToClub(book))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrentClub);

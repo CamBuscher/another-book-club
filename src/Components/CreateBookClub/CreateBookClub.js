@@ -4,8 +4,9 @@ import { db } from '../../firebase';
 import { connect } from 'react-redux';
 import { updateBookClubs } from '../../redux/actions/actions';
 import './CreateBookClub.css';
+import PropTypes from 'prop-types';
 
-class CreateBookClub extends Component {
+export class CreateBookClub extends Component {
   constructor(props) {
     super(props);
 
@@ -34,7 +35,7 @@ class CreateBookClub extends Component {
   });
 
   render() {
-    const { clubName, description } = this.state
+    const { clubName, description } = this.state;
 
     return (
       <form onSubmit={this.handleSubmit} className='createClubForm'> 
@@ -56,9 +57,14 @@ class CreateBookClub extends Component {
         <button type='submit'>Create </ button>
         <hr />
       </form>
-    )
+    );
   }
 }
+
+CreateBookClub.propTypes = {
+  user: PropTypes.object,
+  updateBookClubs: PropTypes.func
+};
 
 export const mapStateToProps = ({user}) => ({ user });
 

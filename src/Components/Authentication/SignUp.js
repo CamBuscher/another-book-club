@@ -2,30 +2,31 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { auth, db } from '../../firebase';
 import * as routes from '../../constants/routes';
+import PropTypes from 'prop-types';
 
 const SignUpPage = ({history}) =>
   <div>
     <h1>SignUp</h1>
     <SignUpForm history={history}/>
-  </div>
+  </div>;
 
 const INITIAL_STATE = {
   username: '',
   email: '',
   passwordOne: '',
   passwordTwo: '',
-  error: null,
+  error: null
 };
 
 const byPropKey = (propertyName, value) => () => ({
-  [propertyName]: value,
+  [propertyName]: value
 });
 
 class SignUpForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {...INITIAL_STATE}
+    this.state = {...INITIAL_STATE};
   }
 
   onSubmit = (event) => {
@@ -63,7 +64,7 @@ class SignUpForm extends Component {
       email,
       passwordOne,
       passwordTwo,
-      error,
+      error
     } = this.state;
 
     const isInvalid =
@@ -113,11 +114,19 @@ const SignUpLink = () =>
     Don't have an account?
     {' '}
     <Link to={routes.SIGN_UP}>Sign Up</Link>
-  </p>
+  </p>;
+
+SignUpPage.propTypes = {
+  history: PropTypes.object
+};
+
+SignUpForm.propTypes = {
+  history: PropTypes.object
+};
 
 export default withRouter(SignUpPage);
 
 export {
   SignUpForm,
-  SignUpLink,
+  SignUpLink
 };

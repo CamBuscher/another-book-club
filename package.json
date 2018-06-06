@@ -31,7 +31,14 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
-      "!src/index.js"
+      "!src/index.js",
+      "!src/Components/App/App.js",
+      "!src/Components/Authentication/SignIn.js",
+      "!src/Components/Authentication/SignOut.js",
+      "!src/Components/Authentication/SignUp.js",
+      "!src/firebase/auth.js",
+      "!src/firebase/db.js",
+      "!src/firebase/index.js"
     ]
   }
 }

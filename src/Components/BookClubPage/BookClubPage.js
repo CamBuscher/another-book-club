@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
-import * as Routes from '../../constants/routes'
+import { withRouter } from 'react-router-dom';
+import * as Routes from '../../constants/routes';
 import CreateBookClub from '../CreateBookClub/CreateBookClub';
 import { removeBookClub, setCurrentClub } from '../../redux/actions/actions';
-
+import PropTypes from 'prop-types';
 import { db } from '../../firebase';
 import './BookClubPage.css';
 
@@ -19,14 +19,14 @@ class BookClubPage extends Component {
 
   enterClub = club => {
     this.props.setCurrentClub(club);
-    this.props.history.push(Routes.CURRENT_CLUB)
+    this.props.history.push(Routes.CURRENT_CLUB);
   }
 
   removeClub = async (clubName) => {
     const filteredClubs = this.state.filteredClubs.filter(club => club.clubName !== clubName);
     this.props.removeBookClub(clubName);
     
-    const response = await db.onceGetUserBookClubs(this.props.userId)
+    const response = await db.onceGetUserBookClubs(this.props.userId);
     const clubs = await response.val();
     const newClubs = Object.assign({...clubs}, {[clubName]: null});
     await db.removeUserBookClub(newClubs, this.props.userId);
@@ -64,9 +64,9 @@ class BookClubPage extends Component {
   renderClubs = () => {
     return this.state.filteredClubs.map(club => {
       const deleteAbility = () => {
-        let display = <div></div>
+        let display = <div></div>;
         if (club.admin === this.props.userId) {
-          display = <button onClick={() => this.removeClub(club.clubName)}>Delete club </button>
+          display = <button onClick={() => this.removeClub(club.clubName)}>Leave club </button>;
         } 
         return display;
       };
@@ -91,6 +91,14 @@ class BookClubPage extends Component {
       </div>
     );
   }
+}
+
+BookClubPage.propTypes = {
+  userClubs: PropTypes.array,
+  userId: PropTypes.string,
+  removeBookClub: PropTypes.func,
+  setCurrentClub: PropTypes.func,
+  history: PropTypes.object
 };
 
 export const mapStateToProps = (state) => ({ 
