@@ -24,3 +24,51 @@ describe('UPDATE BOOK CLUBS', () => {
     expect(actual).toEqual(expected);
   });
 });
+
+describe('Remove book club', () => {
+  it('should return an action object', () => {
+    let expected = {
+      type: 'REMOVE_CLUB',
+      clubName: 'cam'
+    };
+    let actual = actions.removeBookClub('cam');
+
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe('Set current cluba', () => {
+  it('should return an action object', () => {
+    let expected = {
+      type: 'SET_CURRENT_CLUB',
+      club: {name: 'cam'}
+    };
+    let actual = actions.setCurrentClub({ name: 'cam' });
+
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe('add book to club', () => {
+  it('should return an action object', () => {
+    let expected = {
+      type: 'ADD_BOOK_TO_CLUB',
+      book: { name: 'cam' }
+    };
+    let actual = actions.addBookToClub({ name: 'cam' });
+
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe('add comment to club', () => {
+  it('should return an action object', () => {
+    let expected = {
+      type: 'ADD_COMMENT_TO_CLUB',
+      comment: { name: 'cam' }
+    };
+    let actual = actions.addCommentToClub({ name: 'cam' });
+
+    expect(actual).toEqual(expected);
+  });
+});
