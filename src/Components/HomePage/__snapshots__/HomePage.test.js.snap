@@ -18,33 +18,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h3>
-          Browse for some free e-books, or search for something more specific
-</h3>,
-        <button
-          name="mystery"
-          onClick={[Function]}
->
-          Mystery
-</button>,
-        <button
-          name="Science Fiction"
-          onClick={[Function]}
->
-          Science Fiction
-</button>,
-        <button
-          name="Romance"
-          onClick={[Function]}
->
-          Romance
-</button>,
-        <button
-          name="Biography"
-          onClick={[Function]}
->
-          Biography
-</button>,
+        <h5>
+          Search for a book
+</h5>,
         <form
           onSubmit={[Function]}
 >
@@ -60,7 +36,9 @@ ShallowWrapper {
           </button>
 </form>,
         <Unknown
+          addBookToClub={undefined}
           books={Array []}
+          currentClub={undefined}
 />,
       ],
     },
@@ -71,63 +49,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Browse for some free e-books, or search for something more specific",
+          "children": "Search for a book",
         },
         "ref": null,
-        "rendered": "Browse for some free e-books, or search for something more specific",
-        "type": "h3",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Mystery",
-          "name": "mystery",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Mystery",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Science Fiction",
-          "name": "Science Fiction",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Science Fiction",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Romance",
-          "name": "Romance",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Romance",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Biography",
-          "name": "Biography",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Biography",
-        "type": "button",
+        "rendered": "Search for a book",
+        "type": "h5",
       },
       Object {
         "instance": null,
@@ -183,7 +109,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
+          "addBookToClub": undefined,
           "books": Array [],
+          "currentClub": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -199,33 +127,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h3>
-            Browse for some free e-books, or search for something more specific
-</h3>,
-          <button
-            name="mystery"
-            onClick={[Function]}
->
-            Mystery
-</button>,
-          <button
-            name="Science Fiction"
-            onClick={[Function]}
->
-            Science Fiction
-</button>,
-          <button
-            name="Romance"
-            onClick={[Function]}
->
-            Romance
-</button>,
-          <button
-            name="Biography"
-            onClick={[Function]}
->
-            Biography
-</button>,
+          <h5>
+            Search for a book
+</h5>,
           <form
             onSubmit={[Function]}
 >
@@ -241,7 +145,9 @@ ShallowWrapper {
             </button>
 </form>,
           <Unknown
+            addBookToClub={undefined}
             books={Array []}
+            currentClub={undefined}
 />,
         ],
       },
@@ -252,63 +158,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Browse for some free e-books, or search for something more specific",
+            "children": "Search for a book",
           },
           "ref": null,
-          "rendered": "Browse for some free e-books, or search for something more specific",
-          "type": "h3",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Mystery",
-            "name": "mystery",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Mystery",
-          "type": "button",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Science Fiction",
-            "name": "Science Fiction",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Science Fiction",
-          "type": "button",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Romance",
-            "name": "Romance",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Romance",
-          "type": "button",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Biography",
-            "name": "Biography",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Biography",
-          "type": "button",
+          "rendered": "Search for a book",
+          "type": "h5",
         },
         Object {
           "instance": null,
@@ -364,7 +218,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
+            "addBookToClub": undefined,
             "books": Array [],
+            "currentClub": undefined,
           },
           "ref": null,
           "rendered": null,

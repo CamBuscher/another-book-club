@@ -26,32 +26,6 @@ describe('HomePage', () => {
     expect(wrapper.state().searchValue).toEqual('hello')
   });
 
-  describe('handleGenreSearch', () => {
-    it('should call the searchByGenre API call', () => {
-      const button = wrapper.find('button').first();
-      
-      button.simulate('click', { preventDefault: () => { }, target: {
-        name: 'mystery'
-      } });
-
-      expect(APIcalls.searchFreeEbooksByGenre).toHaveBeenCalled();
-    });
-
-    it('should set state to return of searchByGenre API call', async () => {
-      const expected = ['dog']
-      APIcalls.searchFreeEbooksByGenre = jest.fn().mockImplementation(() => ['dog']);
-      const button = wrapper.find('button').first();
-
-      await button.simulate('click', {
-        preventDefault: () => { }, target: {
-          name: 'mystery'
-        }
-      });
-
-      expect(wrapper.state().searchResults).toEqual(expected);
-    });
-  });
-
   describe('handleInputSearch', () => {
     it('should call the search via Author/title API call', async () => {
       const form = wrapper.find('form');

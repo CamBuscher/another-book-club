@@ -1,7 +1,7 @@
 import React from 'react';
 import './BooksDisplay.css';
 
-export const BooksDisplay = ({books, currentClub, addBookToClub}) => {
+export const BooksDisplay = ({books = [], currentClub, addBookToClub}) => {
   const bookPreviews = books.map(book => {
     let previewImage;
 

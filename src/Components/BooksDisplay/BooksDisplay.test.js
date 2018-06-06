@@ -14,7 +14,11 @@ describe('BooksDisplay', () => {
         imageLinks: {
           thumbnail: 'book.jpg'
         }
-      }]
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
     };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
@@ -23,7 +27,10 @@ describe('BooksDisplay', () => {
 
   it('should match snapshot when given no books', () => {
     mockprops = {
-      books: []
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
     };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
@@ -40,13 +47,19 @@ describe('BooksDisplay', () => {
   });
 
   it('should have a bookPreview div if books received', () => {
-    mockprops = { books: [{
-      title: 'Annihilation',
-      authors: ['Jeff'],
-      imageLinks: {
-        thumbnail: 'book.jpg'
-      }
-    }] };
+    mockprops = {
+      books: [{
+        title: 'Annihilation',
+        authors: ['Jeff'],
+        imageLinks: {
+          thumbnail: 'book.jpg'
+        }
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
+    };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
     const bookPreviews = wrapper.find('.bookPreview');
@@ -59,7 +72,11 @@ describe('BooksDisplay', () => {
       books: [{
         title: 'Annihilation',
         authors: ['Jeff']
-      }]
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
     };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
@@ -76,7 +93,11 @@ describe('BooksDisplay', () => {
         imageLinks: {
           thumbnail: 'book.jpg'
         }
-      }]
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
     };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
@@ -92,7 +113,11 @@ describe('BooksDisplay', () => {
         imageLinks: {
           thumbnail: 'book.jpg'
         }
-      }]
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
     };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
@@ -109,7 +134,11 @@ describe('BooksDisplay', () => {
         imageLinks: {
           thumbnail: 'book.jpg'
         }
-      }]
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
     };
     wrapper = shallow(<BooksDisplay {...mockprops} />);
 
