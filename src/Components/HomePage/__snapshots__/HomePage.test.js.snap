@@ -30,6 +30,7 @@ ShallowWrapper {
                     value=""
           />
           <button
+                    disabled={true}
                     type="submit"
           >
                     Search
@@ -67,6 +68,7 @@ ShallowWrapper {
               value=""
 />,
             <button
+              disabled={true}
               type="submit"
 >
               Search
@@ -95,6 +97,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Search",
+              "disabled": true,
               "type": "submit",
             },
             "ref": null,
@@ -139,6 +142,7 @@ ShallowWrapper {
                         value=""
             />
             <button
+                        disabled={true}
                         type="submit"
             >
                         Search
@@ -176,6 +180,7 @@ ShallowWrapper {
                 value=""
 />,
               <button
+                disabled={true}
                 type="submit"
 >
                 Search
@@ -204,6 +209,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Search",
+                "disabled": true,
                 "type": "submit",
               },
               "ref": null,

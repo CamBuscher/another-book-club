@@ -38,6 +38,7 @@ ShallowWrapper {
 />,
         <br />,
         <button
+          disabled={true}
           type="submit"
 >
           Create 
@@ -112,6 +113,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Create ",
+          "disabled": true,
           "type": "submit",
         },
         "ref": null,
@@ -155,6 +157,7 @@ ShallowWrapper {
 />,
           <br />,
           <button
+            disabled={true}
             type="submit"
 >
             Create 
@@ -229,6 +232,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Create ",
+            "disabled": true,
             "type": "submit",
           },
           "ref": null,
