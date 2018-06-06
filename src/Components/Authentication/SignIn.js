@@ -62,7 +62,7 @@ class SignInForm extends Component {
       email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className='signIn'>
         <input
           value={email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}

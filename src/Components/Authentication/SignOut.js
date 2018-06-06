@@ -15,6 +15,7 @@ export const SignOutButton = ({history}) => {
     <button
       type="button"
       onClick={signOut}
+      className='signOut'
     >
       Sign Out
     </button>
