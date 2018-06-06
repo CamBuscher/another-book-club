@@ -37,6 +37,16 @@ class App extends Component {
     });
   }
 
+  async componentDidUpdate(prevProps, prevState) {
+    if (this.state.authUser !== null) {
+      const users = await db.onceGetUsers();
+      const currentUser = await users.val()[this.state.authUser.uid];
+      await this.props.setUser(currentUser);
+    } else {
+      this.props.setUser({});
+    }
+  }
+
   render() {
     return (
       
