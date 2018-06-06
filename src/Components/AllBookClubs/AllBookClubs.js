@@ -3,7 +3,7 @@ import { db } from '../../firebase/';
 import { connect } from 'react-redux';
 import { updateBookClubs } from '../../redux/actions/actions';
 
-class AllBookClubs extends Component {
+export class AllBookClubs extends Component {
   constructor(props) {
     super(props);
 

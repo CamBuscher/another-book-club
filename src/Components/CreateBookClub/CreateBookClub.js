@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { updateBookClubs } from '../../redux/actions/actions';
 import './CreateBookClub.css';
 
-class CreateBookClub extends Component {
+export class CreateBookClub extends Component {
   constructor(props) {
     super(props);
 

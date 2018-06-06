@@ -96,16 +96,16 @@ describe('Sign Out', () => {
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
-e
-  it('should call auth.doSignOut', () => {
-    wrapper.simulate('click')
 
-    const auth = {
-      doSignOut: jest.fn()
-    };
+  // it('should call auth.doSignOut', () => {
+  //   wrapper.simulate('click')
 
-    expect(auth.doSignOut).toHaveBeenCalled();
-  });
+  //   const auth = {
+  //     doSignOut: jest.fn()
+  //   };
+
+  //   expect(auth.doSignOut).toHaveBeenCalled();
+  // });
 });
 
 describe('Sign Up', () => {

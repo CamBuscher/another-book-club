@@ -1,11 +1,15 @@
 import React from 'react';
-import AllBookClubs, { mapStateToProps, mapDispatchToProps } from './AllBookClubs';
-import { removeBookClub, setCurrentClub } from '../../redux/actions/actions';
+import {AllBookClubs, mapStateToProps, mapDispatchToProps } from './AllBookClubs';
+import { updateBookClubs } from '../../redux/actions/actions';
+import {shallow} from 'enzyme';
 
-describe('BookClubPage', () => {
+describe('AllBookClubs', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<BookClubPage />);
+    wrapper = shallow(<AllBookClubs 
+      store={{getState: jest.fn()}}
+      user={{bookClubs: {}}}
+      />);
   });
 
   it('should match snapshot', () => {
@@ -15,42 +19,15 @@ describe('BookClubPage', () => {
   it('calls dispatch with a removeBookClub action', () => {
     const dispatch = jest.fn();
 
-    const actionToDispatch = removeBookClub();
+    const actionToDispatch = updateBookClubs();
 
     const mappedProps = mapDispatchToProps(dispatch);
 
-    mappedProps.removeBookClub();
+    mappedProps.updateBookClubs();
 
     expect(dispatch).toHaveBeenCalledWith(actionToDispatch);
   });
-
-  it('calls dispatch with a setCurrentClub action', () => {
-    const dispatch = jest.fn();
-
-    const actionToDispatch = setCurrentClub();
-
-    const mappedProps = mapDispatchToProps(dispatch);
-
-    mappedProps.setCurrentClub();
-
-    expect(dispatch).toHaveBeenCalledWith(actionToDispatch);
-  });
-
-  it('should return the userClubs array', () => {
-    const mockState = {
-      user: {
-        bookClubs: [],
-        id: 'asdasd'
-      }
-    };
-
-    let expected = [];
-
-    const mappedProps = mapStateToProps(mockState).userClubs;
-
-    expect(mappedProps).toEqual(expected);
-  });
-
+  
   it('should return the userId', () => {
     const mockState = {
       user: {
@@ -59,9 +36,19 @@ describe('BookClubPage', () => {
       }
     };
 
-    let expected = 'asdasd';
+    let expected = {bookClubs: [], id: 'asdasd'};
 
-    const mappedProps = mapStateToProps(mockState).userId;
+    const mappedProps = mapStateToProps(mockState).user;
 
     expect(mappedProps).toEqual(expected);
   });
+
+  describe('renderClubs', () => {
+    it('should return a bookclub div', () => {
+      wrapper.state().clubs = [{clubName: 'whoo'}];
+      const result = wrapper.instance().renderClubs()
+
+      expect((result)[0].type).toEqual('div');
+    });
+  });
+});

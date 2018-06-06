@@ -146,4 +146,26 @@ describe('BooksDisplay', () => {
 
     expect(author.text()).toEqual('Author: jeff');
   });
+
+  it('should call addBookToClub on button click', () => {
+    mockprops = {
+      books: [{
+        title: 'Annihilation',
+        authors: ['jeff'],
+        imageLinks: {
+          thumbnail: 'book.jpg'
+        }
+      }],
+      currentClub: {
+        books: []
+      },
+      addBookToClub: jest.fn()
+    };
+    wrapper = shallow(<BooksDisplay {...mockprops} />);
+
+    const button = wrapper.find('button');
+    button.simulate('click');
+
+    expect(mockprops.addBookToClub).toHaveBeenCalled();
+  });
 });
