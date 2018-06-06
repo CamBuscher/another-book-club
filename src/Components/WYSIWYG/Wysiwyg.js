@@ -6,7 +6,7 @@ import { db } from '../../firebase/';
 import 'react-quill/dist/quill.snow.css';
 import './Wysiwyg.css';
 
-class Wysiwyg extends React.Component {
+export class Wysiwyg extends React.Component {
   constructor(props) {
     super(props)
     this.state = { text: '' }
@@ -14,7 +14,7 @@ class Wysiwyg extends React.Component {
   }
 
   handleChange(value) {
-    this.setState({ text: value })
+    this.setState({ text: value });
   }
 
   handleComment = () => { 
@@ -22,7 +22,7 @@ class Wysiwyg extends React.Component {
       this.props.currentClub.comments = [];
     }
 
-    const date = new Date().toLocaleString()
+    const date = new Date().toLocaleString();
     const comment = {
       user: this.props.user,
       comment: this.state.text,
