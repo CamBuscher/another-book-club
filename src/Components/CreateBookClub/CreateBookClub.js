@@ -36,7 +36,9 @@ export class CreateBookClub extends Component {
 
   render() {
     const { clubName, description } = this.state;
-
+    const isInvalid =
+      this.state.clubName === '' ||
+      this.state.description === '';
     return (
       <form onSubmit={this.handleSubmit} className='createClubForm'> 
         <h2>Make a new book club</h2>
@@ -54,7 +56,7 @@ export class CreateBookClub extends Component {
           placeholder="Describe your book club?"
         />
         <br />
-        <button type='submit'>Create </ button>
+        <button type='submit' disabled={isInvalid}>Create </ button>
         <hr />
       </form>
     );
