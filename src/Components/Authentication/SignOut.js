@@ -1,6 +1,6 @@
 import React from 'react';
 import * as routes from '../../constants/routes';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { auth } from '../../firebase';
 import PropTypes from 'prop-types';
 

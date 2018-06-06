@@ -4,7 +4,7 @@ import {CreateBookClub, mapDispatchToProps, mapStateToProps} from './CreateBookC
 import {shallow} from 'enzyme';
 
 describe('CreateBookClub', () => {
-  let wrapper
+  let wrapper;
   beforeEach(() => {
     wrapper = shallow(<CreateBookClub updateBookClubs={jest.fn()}/>);
   });

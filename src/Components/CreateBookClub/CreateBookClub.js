@@ -35,7 +35,7 @@ export class CreateBookClub extends Component {
   });
 
   render() {
-    const { clubName, description } = this.state
+    const { clubName, description } = this.state;
 
     return (
       <form onSubmit={this.handleSubmit} className='createClubForm'> 
@@ -57,7 +57,7 @@ export class CreateBookClub extends Component {
         <button type='submit'>Create </ button>
         <hr />
       </form>
-    )
+    );
   }
 }
 

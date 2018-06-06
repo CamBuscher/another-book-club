@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Wysiwyg, mapStateToProps, mapDispatchToProps }from './Wysiwyg';
+import { Wysiwyg, mapStateToProps, mapDispatchToProps } from './Wysiwyg';
 import { addCommentToClub } from '../../redux/actions/actions';
 
 describe('wysiwyg', () => {

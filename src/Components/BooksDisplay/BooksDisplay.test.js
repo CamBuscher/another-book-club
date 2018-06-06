@@ -1,10 +1,10 @@
 import React from 'react';
 import { BooksDisplay } from './BooksDisplay';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('BooksDisplay', () => {
-  let wrapper
-  let mockprops
+  let wrapper;
+  let mockprops;
 
   it('should match snapshot when given books', () => {
     mockprops = {
@@ -43,7 +43,7 @@ describe('BooksDisplay', () => {
 
     const bookPreviews = wrapper.find('.bookPreview');
 
-    expect(bookPreviews).toHaveLength(0)
+    expect(bookPreviews).toHaveLength(0);
   });
 
   it('should have a bookPreview div if books received', () => {

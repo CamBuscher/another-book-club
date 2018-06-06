@@ -8,7 +8,7 @@ const SignUpPage = ({history}) =>
   <div>
     <h1>SignUp</h1>
     <SignUpForm history={history}/>
-  </div>
+  </div>;
 
 const INITIAL_STATE = {
   username: '',
@@ -19,14 +19,14 @@ const INITIAL_STATE = {
 };
 
 const byPropKey = (propertyName, value) => () => ({
-  [propertyName]: value,
+  [propertyName]: value
 });
 
 class SignUpForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {...INITIAL_STATE}
+    this.state = {...INITIAL_STATE};
   }
 
   onSubmit = (event) => {
@@ -64,7 +64,7 @@ class SignUpForm extends Component {
       email,
       passwordOne,
       passwordTwo,
-      error,
+      error
     } = this.state;
 
     const isInvalid =
@@ -120,9 +120,13 @@ SignUpPage.propTypes = {
   history: PropTypes.object
 };
 
+SignUpForm.propTypes = {
+  history: PropTypes.object
+};
+
 export default withRouter(SignUpPage);
 
 export {
   SignUpForm,
-  SignUpLink,
+  SignUpLink
 };

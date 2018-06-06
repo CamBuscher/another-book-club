@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import HomePage from '../HomePage/HomePage';
 import './App.css';
 import PropTypes from 'prop-types';
 
@@ -36,16 +35,6 @@ class App extends Component {
         ? this.setState(() => ({ authUser }))
         : this.setState(() => ({ authUser: null }));
     });
-  }
-
-  async componentDidUpdate(prevProps, prevState) {
-    if (this.state.authUser !== null) {
-      const users = await db.onceGetUsers();
-      const currentUser = await users.val()[this.state.authUser.uid];
-      await this.props.setUser(currentUser);
-    } else {
-      this.props.setUser({});
-    }
   }
 
   render() {

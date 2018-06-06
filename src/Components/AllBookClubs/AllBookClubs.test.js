@@ -9,7 +9,7 @@ describe('AllBookClubs', () => {
     wrapper = shallow(<AllBookClubs 
       store={{getState: jest.fn()}}
       user={{bookClubs: {}}}
-      />);
+    />);
   });
 
   it('should match snapshot', () => {
@@ -46,7 +46,7 @@ describe('AllBookClubs', () => {
   describe('renderClubs', () => {
     it('should return a bookclub div', () => {
       wrapper.state().clubs = [{clubName: 'whoo'}];
-      const result = wrapper.instance().renderClubs()
+      const result = wrapper.instance().renderClubs();
 
       expect((result)[0].type).toEqual('div');
     });

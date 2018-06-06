@@ -13,13 +13,13 @@ const SignInPage = ({ history }) =>
   </div>;
 
 const byPropKey = (propertyName, value) => () => ({
-  [propertyName]: value,
+  [propertyName]: value
 });
 
 export const INITIAL_STATE = {
   email: '',
   password: '',
-  error: null,
+  error: null
 };
 
 class SignInForm extends Component {
@@ -54,7 +54,7 @@ class SignInForm extends Component {
     const {
       email,
       password,
-      error,
+      error
     } = this.state;
 
     const isInvalid =
@@ -86,6 +86,10 @@ class SignInForm extends Component {
 }
 
 SignInPage.propTypes = {
+  history: PropTypes.object
+};
+
+SignInForm.propTypes = {
   history: PropTypes.object
 };
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import * as Routes from '../../constants/routes';
 import CreateBookClub from '../CreateBookClub/CreateBookClub';
 import { removeBookClub, setCurrentClub } from '../../redux/actions/actions';
@@ -26,7 +26,7 @@ class BookClubPage extends Component {
     const filteredClubs = this.state.filteredClubs.filter(club => club.clubName !== clubName);
     this.props.removeBookClub(clubName);
     
-    const response = await db.onceGetUserBookClubs(this.props.userId)
+    const response = await db.onceGetUserBookClubs(this.props.userId);
     const clubs = await response.val();
     const newClubs = Object.assign({...clubs}, {[clubName]: null});
     await db.removeUserBookClub(newClubs, this.props.userId);

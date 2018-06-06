@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import HomePage from './HomePage';
 import * as APIcalls from '../../Helpers/APIcalls';
 
@@ -23,7 +23,7 @@ describe('HomePage', () => {
       value: 'hello'
     }});
 
-    expect(wrapper.state().searchValue).toEqual('hello')
+    expect(wrapper.state().searchValue).toEqual('hello');
   });
 
   describe('handleInputSearch', () => {
@@ -39,11 +39,11 @@ describe('HomePage', () => {
 
       await form.simulate('submit', {preventDefault: jest.fn()});
 
-      expect(APIcalls.searchViaAuthorTitleISBN).toHaveBeenCalledWith('hello')
+      expect(APIcalls.searchViaAuthorTitleISBN).toHaveBeenCalledWith('hello');
     });
 
     it('should set the state with search results', async () => {
-      const expected = ['dog']
+      const expected = ['dog'];
       APIcalls.searchViaAuthorTitleISBN = jest.fn().mockImplementation(() => ['dog']);
       const form = wrapper.find('form');
       const input = wrapper.find('input');

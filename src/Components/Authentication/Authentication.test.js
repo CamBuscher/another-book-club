@@ -2,14 +2,13 @@ import {SignInForm, INITIAL_STATE} from './SignIn';
 import SignOutButton from './SignOut';
 import {SignUpForm} from './SignUp';
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { auth } from '../../firebase';
+import { shallow } from 'enzyme';
 
 describe('signInForm', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<SignInForm />)
+    wrapper = shallow(<SignInForm />);
   });
 
   it('should match snapshot', () => {
@@ -116,6 +115,6 @@ describe('Sign Up', () => {
   });
 
   it('should match snapshot', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
+    expect(wrapper).toMatchSnapshot();
+  });
 });

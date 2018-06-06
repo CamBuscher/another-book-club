@@ -31,7 +31,7 @@ export class AllBookClubs extends Component {
 
   renderClubs = () => {
     const clubs = this.state.clubs.map(club => {
-      const userClubs = Object.keys(this.props.user.bookClubs || {})
+      const userClubs = Object.keys(this.props.user.bookClubs || {});
       const enterCheck = () => {
         if (userClubs.includes(club.clubName)) {
           return <p>You're already in this club!</p>;

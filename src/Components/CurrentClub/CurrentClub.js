@@ -50,7 +50,7 @@ class CurrentClub extends Component {
             {this.displayClubBooks()}
           </div>
         </div>
-      )
+      );
     } else {
       return <div></div>;
     }
@@ -65,7 +65,7 @@ class CurrentClub extends Component {
         />
       );
     } else {
-      return <button onClick={() => this.setState({ showSearch: true })}> Add a book </button>
+      return <button onClick={() => this.setState({ showSearch: true })}> Add a book </button>;
     }
   }
 
