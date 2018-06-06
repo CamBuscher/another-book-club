@@ -57,10 +57,16 @@ class App extends Component {
             <h1 className="App-title">Another book club</h1>
           </header>
 
-          <Route
-            exact path={routes.HOME}
-            component={() => <HomePage />}
-          />
+          {this.state.authUser
+            ? <Route
+              exact path={routes.HOME}
+              component={() => <BookClubPage />}
+            />
+            : <Route
+              exact path={routes.HOME}
+              component={() => <SignInPage />}
+            />
+          }
 
           <Route
             exact path={routes.SIGN_UP}
