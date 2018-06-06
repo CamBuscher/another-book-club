@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import * as Routes from '../../constants/routes'
+import * as Routes from '../../constants/routes';
 import CreateBookClub from '../CreateBookClub/CreateBookClub';
 import { removeBookClub, setCurrentClub } from '../../redux/actions/actions';
-
+import PropTypes from 'prop-types';
 import { db } from '../../firebase';
 import './BookClubPage.css';
 
@@ -19,7 +19,7 @@ class BookClubPage extends Component {
 
   enterClub = club => {
     this.props.setCurrentClub(club);
-    this.props.history.push(Routes.CURRENT_CLUB)
+    this.props.history.push(Routes.CURRENT_CLUB);
   }
 
   removeClub = async (clubName) => {
@@ -91,6 +91,14 @@ class BookClubPage extends Component {
       </div>
     );
   }
+}
+
+BookClubPage.propTypes = {
+  userClubs: PropTypes.array,
+  userId: PropTypes.string
+  removeBookClub: PropTypes.func,
+  setCurrentClub: PropTypes.func,
+  history: PropTypes.object
 };
 
 export const mapStateToProps = (state) => ({ 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { db } from '../../firebase/';
 import { connect } from 'react-redux';
 import { updateBookClubs } from '../../redux/actions/actions';
+import PropTypes from 'prop-types';
 
 export class AllBookClubs extends Component {
   constructor(props) {
@@ -57,6 +58,11 @@ export class AllBookClubs extends Component {
     );
   }
 }
+
+AllBookClubs.propTypes = {
+  updateBookClubs: PropTypes.func,
+  user: PropTypes.obj
+};
 
 export const mapStateToProps = (state) => ({
   user: state.user

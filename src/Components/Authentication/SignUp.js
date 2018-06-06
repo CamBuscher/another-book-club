@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { auth, db } from '../../firebase';
 import * as routes from '../../constants/routes';
+import PropTypes from 'prop-types';
 
 const SignUpPage = ({history}) =>
   <div>
@@ -14,7 +15,7 @@ const INITIAL_STATE = {
   email: '',
   passwordOne: '',
   passwordTwo: '',
-  error: null,
+  error: null
 };
 
 const byPropKey = (propertyName, value) => () => ({
@@ -113,7 +114,11 @@ const SignUpLink = () =>
     Don't have an account?
     {' '}
     <Link to={routes.SIGN_UP}>Sign Up</Link>
-  </p>
+  </p>;
+
+SignUpPage.propTypes = {
+  history: PropTypes.object
+};
 
 export default withRouter(SignUpPage);
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import HomePage from '../HomePage/HomePage'
+import HomePage from '../HomePage/HomePage';
 import './App.css';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { setUser } from '../../redux/actions/actions';
@@ -96,6 +97,10 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  setUser: PropTypes.func
+};
 
 export const mapDispatchToProps = dispatch => ({ 
   setUser: (user) => dispatch(setUser(user))
