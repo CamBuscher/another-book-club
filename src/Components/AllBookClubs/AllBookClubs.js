@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { db } from '../../firebase/';
 import { connect } from 'react-redux';
+import { updateBookClubs } from '../../redux/actions/actions';
 
 class AllBookClubs extends Component {
   constructor(props) {
@@ -22,7 +23,9 @@ class AllBookClubs extends Component {
   }
 
   addClub = (club) => {
-    db.joinBookClub(this.props.user, club)
+    const { clubName, id, description } = club;
+    db.joinBookClub(this.props.user, club);
+    this.props.updateBookClubs({[clubName]: {clubName, id, description}}, clubName);
   }
 
   renderClubs = () => {
@@ -30,11 +33,11 @@ class AllBookClubs extends Component {
       const userClubs = Object.keys(this.props.user.bookClubs || {})
       const enterCheck = () => {
         if (userClubs.includes(club.clubName)) {
-          return <p>You're already in this club!</p>
+          return <p>You're already in this club!</p>;
         } else {
-          return <button onClick={() => this.addClub(club)}>Enter Club</button>
+          return <button onClick={() => this.addClub(club)}>Enter Club</button>;
         }
-      }
+      };
       return (
         <div className='bookClub' key={club.id}>
           <h3 >{club.clubName}</h3>
@@ -60,8 +63,8 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  // removeBookClub: (clubName) => dispatch(removeBookClub(clubName)),
-  // setCurrentClub: (club) => dispatch(setCurrentClub(club))
+  updateBookClubs: (club, clubName) => dispatch(updateBookClubs(club, clubName))
 });
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(AllBookClubs);
