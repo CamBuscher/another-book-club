@@ -1,6 +1,9 @@
+.createClubForm {
+  margin: auto;
+}
+
 .createClubForm input {
   width: 350px;
-  margin: 10px;
 }
 
 .createClubForm hr {
