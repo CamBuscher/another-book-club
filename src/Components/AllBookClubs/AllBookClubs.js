@@ -35,7 +35,7 @@ class AllBookClubs extends Component {
         if (userClubs.includes(club.clubName)) {
           return <p>You're already in this club!</p>;
         } else {
-          return <button onClick={() => this.addClub(club)}>Enter Club</button>;
+          return <button onClick={() => this.addClub(club)}>Join Club</button>;
         }
       };
       return (

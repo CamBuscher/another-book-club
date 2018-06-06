@@ -64,9 +64,9 @@ class BookClubPage extends Component {
   renderClubs = () => {
     return this.state.filteredClubs.map(club => {
       const deleteAbility = () => {
-        let display = <div></div>
+        let display = <div></div>;
         if (club.admin === this.props.userId) {
-          display = <button onClick={() => this.removeClub(club.clubName)}>Delete club </button>
+          display = <button onClick={() => this.removeClub(club.clubName)}>Leave club </button>;
         } 
         return display;
       };
