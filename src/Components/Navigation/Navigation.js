@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import SignOutButton from '../Authentication/SignOut';
 
 import * as routes from '../../constants/routes';
+import PropTypes from 'prop-types';
 
 const Navigation = ({ authUser, history }) => 
   <div>
@@ -25,3 +26,8 @@ const NavigationNonAuth = () =>
   </ul>
 
 export default Navigation;
+
+Navigation.propTypes = {
+  history: PropTypes.object,
+  authUser: PropTypes.object
+};

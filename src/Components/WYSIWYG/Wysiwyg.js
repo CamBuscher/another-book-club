@@ -5,6 +5,7 @@ import { addCommentToClub } from '../../redux/actions/actions';
 import { db } from '../../firebase/';
 import 'react-quill/dist/quill.snow.css';
 import './Wysiwyg.css';
+import PropTypes from 'prop-types';
 
 export class Wysiwyg extends React.Component {
   constructor(props) {
@@ -48,6 +49,12 @@ export class Wysiwyg extends React.Component {
     );
   }
 }
+
+Wysiwyg.propTypes = {
+  currentClub: PropTypes.object,
+  user: PropTypes.object,
+  addComment: PropTypes.func
+};
 
 export const mapStateToProps = ({ currentClub, user }) => ({ currentClub, user });
 

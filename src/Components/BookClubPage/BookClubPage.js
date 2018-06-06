@@ -95,7 +95,7 @@ class BookClubPage extends Component {
 
 BookClubPage.propTypes = {
   userClubs: PropTypes.array,
-  userId: PropTypes.string
+  userId: PropTypes.string,
   removeBookClub: PropTypes.func,
   setCurrentClub: PropTypes.func,
   history: PropTypes.object

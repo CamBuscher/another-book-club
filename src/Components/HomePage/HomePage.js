@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as APIcalls from '../../Helpers/APIcalls';
 import { BooksDisplay } from '../BooksDisplay/BooksDisplay';
+import PropTypes from 'prop-types';
 
 class HomePage extends Component {
   constructor(props) {
@@ -39,5 +40,10 @@ class HomePage extends Component {
     );
   }
 }
+
+HomePage.propTypes = {
+  currentClub: PropTypes.object,
+  addBookToClub: PropTypes.func
+};
 
 export default HomePage;
