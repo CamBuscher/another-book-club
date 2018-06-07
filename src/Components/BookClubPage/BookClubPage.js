@@ -67,8 +67,16 @@ class BookClubPage extends Component {
         <div className='bookClub' key={club.id}>
           <h3 >{club.clubName}</h3>
           <p>{club.description}</p>
-          <button onClick={() => this.enterClub(club)}>Enter Club</button>
-          <button onClick={() => this.removeClub(club.clubName)}>Leave club </button>
+          <ul>
+            {
+              club.books.map(book => <li key={book.title}>{book.title}</li>)
+            }  
+          </ul>
+          <div>
+            <button onClick={() => this.enterClub(club)}>Enter Club</button>
+            <br />
+            <button onClick={() => this.removeClub(club.clubName)}>Leave club </button>
+          </div>
         </div>
       );
     });
@@ -79,6 +87,11 @@ class BookClubPage extends Component {
       <div>
         <CreateBookClub />
         <h2 className='userClubList'>Your book clubs</h2>
+        <div className='bookClub titles'>
+          <h4>Club Name</h4>
+          <h4>Description</h4>
+          <h4 className='booksTitle'>Books</h4>
+        </div>
         {this.renderClubs()}
       </div>
     );

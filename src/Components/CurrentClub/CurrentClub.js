@@ -94,6 +94,7 @@ class CurrentClub extends Component {
           <hr />
         </div>
         <div className='comment-area'>
+          <h4>Comments</h4>
           {this.showComments()}
           <WYSIWYG />
         </div>

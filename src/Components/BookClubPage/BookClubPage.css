@@ -1,31 +1,52 @@
 .userClubList {
-  color: whitesmoke;
-  text-shadow: 2px 2px 4px black;
+  color: #182B32;
 }
 
 .bookClub {
+  padding-bottom: 10px;
   display: grid;
-  grid-template-columns: 3fr 3fr 1fr 1fr;
-  background-color: #ffffff90;
+  grid-template-columns: 2fr 1.5fr 2fr 1fr;
   width: 90%;
-  margin: 10px auto;
-  max-height: 200px;
-  overflow: scroll;
+  color: #182B32;
+  margin: auto;
+  max-height: 120px;
+  overflow: auto;
+  border-bottom: 1px solid #7D99A445;
+  background-color: #ffffff80
+}
+
+.booksTitle {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.titles {
+  background-color: #7D99A445;
+  max-height: 55px;
+  overflow: hidden;
+  padding-bottom: 0px;
+  color: #182B32
+}
+
+.bookClub .titles h4 {
+  margin: 0px;
 }
 
 .bookClub button {
   display: inline-block;
   border-radius: 4px;
   background-color: #FFFFFF;
-  border: none;
   color: black;
   text-align: center;
   font-size: 14px;
-  height: fit-content;
   width: 100px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 25px 5px 0px 5px;
+}
+
+.bookClub ul {
+  text-align: left;
 }
 
 .bookClub button:hover {
