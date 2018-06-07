@@ -75,7 +75,7 @@ class BookClubPage extends Component {
             }  
           </ul>
           <div>
-            <button onClick={() => this.enterClub(club)}>Enter Club</button>
+            <button onClick={() => this.enterClub(club)}>View Club</button>
             <br />
             <button onClick={() => this.removeClub(club.clubName)}>Leave club </button>
           </div>
