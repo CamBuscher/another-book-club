@@ -26,7 +26,7 @@ const NavigationNonAuth = () =>
   <div className='banner'>
     <h1 className="App-title">Another book club</h1>
     <ul className='nav-bar'>
-      <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
+      <li> </li>
     </ul>
   </div>;
 

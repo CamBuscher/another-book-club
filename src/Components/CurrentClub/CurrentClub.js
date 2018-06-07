@@ -75,8 +75,8 @@ class CurrentClub extends Component {
     return comments.map(comment => {
       return (
         <div className='comment' key={comment.date}>
-          <p className='user'>{comment.user.username}</p>
-          <p className='date'>{comment.date}</p>
+          <p className='user commentUser'>{comment.user.username}</p>
+          <p className='date commentDate'>{comment.date}</p>
           <div className='commentBody' dangerouslySetInnerHTML={{__html: comment.comment}}></div>
         </div>
       );
@@ -94,7 +94,7 @@ class CurrentClub extends Component {
           <hr />
         </div>
         <div className='comment-area'>
-          <h4>Comments</h4>
+          <h3>Comments</h3>
           {this.showComments()}
           <WYSIWYG />
         </div>

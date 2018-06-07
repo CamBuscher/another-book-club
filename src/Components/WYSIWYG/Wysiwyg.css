@@ -1,8 +1,7 @@
 .wysiwyg {
-  width: 80%;
+  width: 90%;
   margin: auto;
-  background-color: #ddd;
-  padding: 20px;
+  background-color: #dddddd80;
 }
 
 .wysiwyg button { 
@@ -11,4 +10,8 @@
 
 .wysiwyg h4 {
   margin-top: 10px;
+}
+
+.ql-editor {
+  min-height: 125px;
 }

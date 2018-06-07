@@ -35,9 +35,9 @@ export class AllBookClubs extends Component {
       const userClubs = Object.keys(this.props.user.bookClubs || {});
       const enterCheck = () => {
         if (userClubs.includes(club.clubName)) {
-          return <p>You're already in this club!</p>;
+          return <p className='allClubsStatus'>You're in this club!</p>;
         } else {
-          return <button onClick={() => this.addClub(club)}>Join Club</button>;
+          return <button className='allClubsStatus' onClick={() => this.addClub(club)}>Join Club</button>;
         }
       };
       return (
@@ -54,7 +54,14 @@ export class AllBookClubs extends Component {
   render() {
     return (
       <div>
-        {this.renderClubs()}
+        <div>
+          <div className='bookClub allClubsClub titles'>
+            <h4>Club Name</h4>
+            <h4>Description</h4>
+            <h4 className='allClubsStatus'>Status</h4>
+          </div>
+          {this.renderClubs()}
+        </div>
       </div>
     );
   }

@@ -9,14 +9,23 @@
   width: 90%;
   color: #182B32;
   margin: auto;
-  max-height: 120px;
+  max-height: fit-content;
   overflow: auto;
   border-bottom: 1px solid #7D99A445;
   background-color: #ffffff80
 }
 
 .allClubsClub {
-  grid-template-columns: 3fr 3fr 1fr
+  display: grid;
+  grid-template-columns: 3fr 3fr 1fr 1fr;
+  background-color: #ffffff90;
+  width: 90%;
+  max-height: 200px;
+  overflow: scroll;
+}
+
+.allClubsStatus {
+  grid-column: 3 / 5; 
 }
 
 .booksTitle {
@@ -46,7 +55,7 @@
   width: 100px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 25px 5px 0px 5px;
+  margin: 25px auto 0px auto;
 }
 
 .bookClub ul {
