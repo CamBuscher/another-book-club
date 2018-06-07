@@ -62,14 +62,16 @@ class BookClubPage extends Component {
   }
 
   renderClubs = () => {
+    
     return this.state.filteredClubs.map(club => {
+      const allBooks = club.books || [];
       return (
         <div className='bookClub' key={club.id}>
           <h3 >{club.clubName}</h3>
           <p>{club.description}</p>
           <ul>
             {
-              club.books.map(book => <li key={book.title}>{book.title}</li>)
+              allBooks.map(book => <li key={book.title}>{book.title}</li>)
             }  
           </ul>
           <div>
@@ -82,16 +84,28 @@ class BookClubPage extends Component {
     });
   }
 
+  clubArea = () => {
+    if (this.state.filteredClubs.length > 0) {
+      return (
+        <div>
+          <h2 className='userClubList'>Your book clubs</h2>
+          <div className='bookClub titles'>
+            <h4>Club Name</h4>
+            <h4>Description</h4>
+            <h4 className='booksTitle'>Books</h4>
+          </div>
+        </div>
+      );
+    } else {
+      return <div></div>
+    }
+  }
+
   render() {
     return (
       <div>
         <CreateBookClub />
-        <h2 className='userClubList'>Your book clubs</h2>
-        <div className='bookClub titles'>
-          <h4>Club Name</h4>
-          <h4>Description</h4>
-          <h4 className='booksTitle'>Books</h4>
-        </div>
+        {this.clubArea()}
         {this.renderClubs()}
       </div>
     );

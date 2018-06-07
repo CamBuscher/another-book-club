@@ -23,12 +23,20 @@
 .clubBooks .bookPreview h4, h5 {
   margin-top: 0px;
   margin-bottom: 5px;
-  color: whitesmoke;
-  text-shadow: 2px 2px 4px black;
+  color: black;
+  text-shadow: none;
+}
+
+.bookPreview {
+  border: none;
+  box-shadow: none;
 }
 
 .bookPreview h4 {
   font-size: 20px;
+  color: black;
+  text-shadow: none;
+  margin-bottom: 5px;
 }
 
 ::-webkit-scrollbar {
