@@ -1,15 +1,17 @@
 .App {
   text-align: center;
-  background: radial-gradient(circle, rgba(231,193,193,1) 0%, rgba(228,151,45,1) 96%);
+  background: #D3DDE080;
   min-height: 100vh;
-  padding: 20px;
+  padding: 0px 0px 20px 0px;
 }
 
 .App-title {
-  font-size: 3.5em;
-  margin-top: 0px;
-  color: whitesmoke;
-  text-shadow: 3px 3px 4px black;
+  font-size: 2.5em;
+  font-family: 'Monoton', cursive;
+  margin-top: 5px;
+  margin-left: 10px;
+  float: left;
+  color: #182B32;
 }
 
 .button {
@@ -17,9 +19,17 @@
   margin: 20px;
 }
 
+.banner { 
+  background-color: #FFFFFF;
+  width: 100%; 
+  height: 75px;
+}
+
 .nav-bar {
   margin-top: 0px;
   list-style: none;
+  float: right;
+  padding-right: 5px;
 }
 
 .nav-bar li {
@@ -28,27 +38,30 @@
 }
 
 .nav-bar a {
-  color: whitesmoke
+  color: #598392;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .nav-bar a:hover {
-  text-shadow: 2px 0px 4px black;
+  color: #11181B
 }
 
 input {
- border: 1px solid gray;
- display: block;
- margin: 10px auto 10px auto;
- width: 250px;
- height: 25px;
+  border: 1px solid gray;
+  display: block;
+  margin: 10px auto 10px auto;
+  width: 300px;
+  height: 25px;
+  padding-left: 10px;
 }
 
 button {
   display: inline-block;
+  border: 1px solid #124559;
   border-radius: 4px;
   background-color: #FFFFFF;
-  border: none;
-  color: black;
+  color: #598392;
   text-align: center;
   font-size: 14px;
   height: 25px;
@@ -56,6 +69,11 @@ button {
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+}
+
+button:hover:enabled {
+  background-color: #7D99A4;
+  color: #fff;
 }
 
 button:disabled {

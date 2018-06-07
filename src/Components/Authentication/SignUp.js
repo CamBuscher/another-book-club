@@ -103,6 +103,12 @@ class SignUpForm extends Component {
           Sign Up
         </button>
 
+        <p>
+          Have an account?
+          {' '}
+          <Link to={routes.SIGN_IN}>Sign In</Link>
+        </p>
+      
         {error && <p>{error.message}</p>}
       </form>
     );
