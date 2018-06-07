@@ -15,6 +15,10 @@
   background-color: #ffffff80
 }
 
+.allClubsClub {
+  grid-template-columns: 3fr 3fr 1fr
+}
+
 .booksTitle {
   text-align: left;
   padding-left: 20px;

@@ -3,6 +3,7 @@ import { db } from '../../firebase/';
 import { connect } from 'react-redux';
 import { updateBookClubs } from '../../redux/actions/actions';
 import PropTypes from 'prop-types';
+import '../BookClubPage/BookClubPage.css';
 
 export class AllBookClubs extends Component {
   constructor(props) {
@@ -40,7 +41,7 @@ export class AllBookClubs extends Component {
         }
       };
       return (
-        <div className='bookClub' key={club.id}>
+        <div className='bookClub allClubsClub' key={club.id}>
           <h3 >{club.clubName}</h3>
           <p>{club.description}</p>
           {enterCheck()}
